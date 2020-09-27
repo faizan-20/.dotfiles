@@ -200,12 +200,11 @@ bindsym $mod+b exec firefox
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
-#auto start
+# Autostart
 exec --no-startup-id picom --experimental-backends
 exec_always --no-startup-id feh --bg-fill --randomize Pictures/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always kmix
-exec_always nm-applet
+exec --no-startup-id kmix
 exec --no-startup-id blueman-applet
 
 new_window 1pixel
@@ -228,7 +227,7 @@ gaps outer -2
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+#smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. 
 # Choose o or i for modifying outer/inner gaps.

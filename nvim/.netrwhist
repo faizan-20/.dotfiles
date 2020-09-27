@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/faizan/.config/awesome/material-awesome/configuration/keys'
+let g:netrw_dirhist_5='/home/faizan/.config/awesome/material-awesome/configuration'
+let g:netrw_dirhist_4='/home/faizan/.config/awesome/material-awesome'
+let g:netrw_dirhist_3='/home/faizan/.config/awesome'
+let g:netrw_dirhist_2='/home/faizan/.config/termite'
+let g:netrw_dirhist_1='/home/faizan/.config/awesome/material-awesome'
