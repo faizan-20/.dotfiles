@@ -1,0 +1,57 @@
+#Window 
+
+window:
+  dimensions:
+    columns: 140
+    lines: 38
+
+  padding:
+    x: 10
+    y: 10
+
+  decorations: none
+
+scrolling:
+  history: 10000
+  multiplier: 3
+background_opacity: 0.8
+window.dynami_title: true
+
+font:
+  normal:
+    family: Fira Mono Nerd Font
+    style: Regular
+  bold:
+    family: Fira Mono Nerd Font
+    style: Bold
+
+  italic:
+    family: Fira Mono Nerd Font
+    style: Italic
+
+  size: 8
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: false
+
+#colors:
+  # Default colors
+  #primary:
+  #  background: '#1d1f21'
+  #  foreground: '#c5c8c6'
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+#keybinding
+
+#keybindings:
+
