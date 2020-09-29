@@ -59,7 +59,7 @@ font-4 = Font Awesome 5 Brands;size=11;0
 font-5 = Font Awesome 5 Free Solid:style=Solid:size=11;0
 
 modules-left = bspwm i3
-modules-center = date spotify
+modules-center = date 
 modules-right = xbacklight pulseaudio memory eth battery powermenu
 
 tray-position = right
@@ -275,7 +275,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 #format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 

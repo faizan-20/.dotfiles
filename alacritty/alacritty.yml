@@ -19,17 +19,17 @@ window.dynami_title: true
 
 font:
   normal:
-    family: Fira Mono Nerd Font
+    family: FiraMono Nerd Font
     style: Regular
   bold:
-    family: Fira Mono Nerd Font
+    family: FiraMono Nerd Font
     style: Bold
 
   italic:
-    family: Fira Mono Nerd Font
+    family: FiraMono Nerd Font  
     style: Italic
 
-  size: 8
+  size: 10
 
   offset:
     x: 0
@@ -72,4 +72,4 @@ colors:
 
 cursor:
   style: Block
-  unfocused_hollow: true
+  unfocused_hollow: true 
