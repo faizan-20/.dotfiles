@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'francoiscabrol/ranger.vim'
 	Plug 'rbgrouleff/bclose.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'morhetz/gruvbox'
 "Syntax
 
 call plug#end()
@@ -26,16 +27,15 @@ set cursorline
 set smartindent
 set laststatus=2
 set cmdheight=2
-
+set nu
+set incsearch
 "---------------------------- Key Remapping ---------------------------------
+map <C-g> :Goyo<CR>
+"---------------------------Color Settings ---------------------------------
+colorscheme gruvbox
+set background=dark
 
-"---------------------------Color Settings -------------------------------
-
-
-
-
-
-
-
+hi! Normal ctermbg=NONE guibg=NONE 
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
 

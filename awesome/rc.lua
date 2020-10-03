@@ -116,6 +116,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+tbox_separator = wibox.widget.textbox(" | ")
 local cw = calendar_widget()
 -- or customized
 local cw = calendar_widget({
@@ -221,8 +222,9 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
+			s.mylayoutbox,
+            tbox_separator,
+			s.mytaglist,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
@@ -233,16 +235,20 @@ awful.screen.connect_for_each_screen(function(s)
            play_icon = '/usr/share/icons/Papirus-Light/24x24/categories/spotify.svg',
            pause_icon = '/usr/share/icons/Papirus-Dark/24x24/panel/spotify-indicator.svg'
         }),
-			volumearc_widget(), 
+			tbox_separator,
+			volumearc_widget(),
+			tbox_separator,
 			brightnessarc_widget({
           get_brightness_cmd = 'xbacklight -get',
           inc_brightness_cmd = 'xbacklight -inc 5',
           dec_brightness_cmd = 'xbacklight -dec 5'
         }),   
+			tbox_separator,
 			wibox.widget.systray(),
+			tbox_separator,
             mytextclock,
+			tbox_separator,
 			battery_widget(),
-            s.mylayoutbox,
         },
     }
 end)
@@ -341,14 +347,14 @@ globalkeys = gears.table.join(
               {description = "run rofi", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "b", function()
-	awful.util.spawn("firefox") end,
+	awful.util.spawn("brave") end,
 			  {description = 'Firefox', group = "FZ"}),
 	-- File Manager
 	awful.key({modkey}, "t", function()
 	awful.util.spawn("thunar") end,
 			  {description = "File Manager", group = "FZ"}),
 	--i3lock
-    awful.key({modkey}, "l", function()
+    awful.key({modkey}, ";", function()
     awful.util.spawn("i3lock-fancy") end,
     	      {description = "screen lock", group = "FZ"}),
     --Brightness
@@ -589,10 +595,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Gaps
-beautiful.useless_gap = 10
+beautiful.useless_gap = 5
 
 -- Autostart
-awful.spawn.with_shell("feh --bg-fill --randomize ~/Pictures/Walls/")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Media/Walls/")
 awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
