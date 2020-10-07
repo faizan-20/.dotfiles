@@ -6,7 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
-require("collision")()
+--require("collision")()
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
@@ -22,7 +22,6 @@ require("awful.hotkeys_popup.keys")
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local brightnessarc_widget = require("awesome-wm-widgets.brightnessarc-widget.brightnessarc")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
-local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
 local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 
@@ -305,7 +304,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,   }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -354,8 +353,8 @@ globalkeys = gears.table.join(
 	awful.util.spawn("thunar") end,
 			  {description = "File Manager", group = "FZ"}),
 	--i3lock
-    awful.key({modkey}, ";", function()
-    awful.util.spawn("i3lock-fancy") end,
+    awful.key({modkey, "Shift" }, "x", function()
+    awful.util.spawn("betterlockscreen -l dim") end,
     	      {description = "screen lock", group = "FZ"}),
     --Brightness
     awful.key({},'XF86MonBrightnessUp',
