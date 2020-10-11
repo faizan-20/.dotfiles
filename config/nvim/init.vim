@@ -3,6 +3,7 @@ let g:airline_theme='minimalist'
 "------------------------------------ Plugin --------------------------
 call plug#begin('~/.vim/plugged')
 "Tools
+	Plug 'preservim/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'junegunn/goyo.vim'
@@ -34,6 +35,8 @@ set nu
 set incsearch
 "---------------------------- Key Remapping ---------------------------------
 map <C-g> :Goyo<CR>
+map <C-n> :NERDTree<CR>
+map <C-p> :!python %<CR>
 "---------------------------Color Settings ---------------------------------
 if (empty($TMUX))
   if (has("nvim"))
@@ -56,5 +59,15 @@ set background=dark
 
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+
+
+
+
+
+
+
+
+
+
 
 

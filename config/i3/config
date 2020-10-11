@@ -161,30 +161,33 @@ hide_edge_borders none
 bindsym $mod+r mode "resize"
 
 #Floating
+for_window [class="mpv"] floating enable
 for_window [class="GParted"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="qbittorrent"] floating enable
 for_window [class="blueman-manager"] floating enable
+for_window [class="vlc"] floating enable
 
 #key bindings
-bindsym $mod+t exec thunar
+bindsym $mod+Shift+f exec pcmanfm 
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 bindsym $mod+shift+s exec systemctl suspend
 bindsym $mod+b exec brave 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec xfce4-screenshooter 
+
 # Autostart
 exec --no-startup-id picom --experimental-backends
 exec_always --no-startup-id feh --bg-fill --randomize Media/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id kmix
-exec --no-startup-id blueman-applet
-exec --no-startup-id autotiling
-exec --no-startup-id dunst
-exec --no-startup-id nm-applet
-exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 360 "betterlockscreen -l dim"""
+exec_always --no-startup-id kmix
+exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id dunst
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 360 "betterlockscreen -l dim" " " &
 
 new_window 1pixel
 

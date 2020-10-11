@@ -349,8 +349,8 @@ globalkeys = gears.table.join(
 	awful.util.spawn("brave") end,
 			  {description = 'Firefox', group = "FZ"}),
 	-- File Manager
-	awful.key({modkey}, "t", function()
-	awful.util.spawn("thunar") end,
+	awful.key({modkey, "Shift"}, "f", function()
+	awful.util.spawn("pcmanfm") end,
 			  {description = "File Manager", group = "FZ"}),
 	--i3lock
     awful.key({modkey, "Shift" }, "x", function()

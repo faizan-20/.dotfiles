@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/faizan/.config/pcmanfm/default'
+let g:netrw_dirhist_4='/home/faizan/.config/i3'
+let g:netrw_dirhist_3='/home/faizan/Code'
+let g:netrw_dirhist_2='/home/faizan/.config'
 let g:netrw_dirhist_1='/home/faizan/dwmblocks/daemons'
 let g:netrw_dirhist_0='/home/faizan/dwmblocks'
 let g:netrw_dirhist_9='/home/faizan/dwmblocks/blocks'
 let g:netrw_dirhist_8='/home/faizan/.xmonad'
 let g:netrw_dirhist_7='/home/faizan/.config/awesome/awesome-wm-widgets/battery-widget'
 let g:netrw_dirhist_6='/home/faizan/.config/awesome/awesome-wm-widgets'
-let g:netrw_dirhist_5='/home/faizan/.dwm/dwmblocks'
-let g:netrw_dirhist_4='/home/faizan/.dwm'
-let g:netrw_dirhist_3='/home/faizan/.config/nvim'
-let g:netrw_dirhist_2='/home/faizan/.dwm/dwm-bar'
