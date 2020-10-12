@@ -226,7 +226,7 @@ awful.screen.connect_for_each_screen(function(s)
 			s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        tbox_separator, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
              spotify_widget({
@@ -345,12 +345,12 @@ globalkeys = gears.table.join(
 	awful.util.spawn("rofi -show drun -theme sidebar")      end,
               {description = "run rofi", group = "launcher"}),
 	-- Firefox
-	awful.key({ modkey }, "b", function()
+	awful.key({ modkey }, "w", function()
 	awful.util.spawn("brave") end,
-			  {description = 'Firefox', group = "FZ"}),
+			  {description = 'Browser', group = "FZ"}),
 	-- File Manager
 	awful.key({modkey, "Shift"}, "f", function()
-	awful.util.spawn("pcmanfm") end,
+	awful.util.spawn("thunar") end,
 			  {description = "File Manager", group = "FZ"}),
 	--i3lock
     awful.key({modkey, "Shift" }, "x", function()
