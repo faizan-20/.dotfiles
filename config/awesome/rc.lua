@@ -55,7 +55,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "st"
 editor = os.getenv("nvim") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -280,8 +280,6 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -342,8 +340,8 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey },            "d",     function ()
-	awful.util.spawn("rofi -show drun -theme sidebar")      end,
-              {description = "run rofi", group = "launcher"}),
+	awful.util.spawn("rofi -show drun")      end,
+              {description = "run prompt", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "w", function()
 	awful.util.spawn("brave") end,
@@ -352,7 +350,12 @@ globalkeys = gears.table.join(
 	awful.key({modkey, "Shift"}, "f", function()
 	awful.util.spawn("thunar") end,
 			  {description = "File Manager", group = "FZ"}),
-	--i3lock
+	
+	--screesnshot
+	awful.key({}, "Print", function()
+	awful.util.spawn("xfce4-screenshooter") end,
+			  {description = "screesnshot", group = "FZ"}),	
+	--lock
     awful.key({modkey, "Shift" }, "x", function()
     awful.util.spawn("betterlockscreen -l dim") end,
     	      {description = "screen lock", group = "FZ"}),
@@ -542,14 +545,11 @@ awful.rules.rules = {
         class = {
           "Arandr",
           "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
+          "feh",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"},
+          "GParted",
+		  "qBittorrent",
+		  "zoom",},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -563,10 +563,13 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
-}
+    -- Set programs on certain tag
+	{ rule = { class = "zoom"},
+       properties = { tag = "2" } },
+	{ rule = { class = "Brave-browser"},
+		properties = { tag = "2"}	},
+   }
+	
 -- }}}
 
 -- {{{ Signals
@@ -598,7 +601,7 @@ beautiful.useless_gap = 5
 
 -- Autostart
 awful.spawn.with_shell("feh --bg-fill --randomize ~/Media/Walls/")
-awful.spawn.with_shell("picom --experimental-backends")
+--awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
 awful.spawn.with_shell('kmix')

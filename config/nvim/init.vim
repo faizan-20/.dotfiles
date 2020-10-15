@@ -1,27 +1,44 @@
-let mapleader = " "
-let g:airline_theme='minimalist'
+"---------------------------------mapleader-------------------------
+let g:mapleader = "\<Space>"
+
+"----------------------------------airline-----------------------------
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline_theme='onedark'
+"let g:airline_theme='minimalist'
+let g:airline_theme='gruvbox'
+
 "------------------------------------ Plugin --------------------------
 call plug#begin('~/.vim/plugged')
 "Tools
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 	Plug 'preservim/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'junegunn/goyo.vim'
 	Plug 'francoiscabrol/ranger.vim'
-	Plug 'rbgrouleff/bclose.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'dracula/vim', { 'as': 'dracula' }
-	Plug 'drewtempelmeyer/palenight.vim'
-	Plug 'morhetz/gruvbox'
-	Plug 'rakr/vim-one'
+	Plug 'mhinz/vim-startify'
 "Syntax
-
+	Plug 'lilydjwg/colorizer'
+"Color	
+	Plug 'morhetz/gruvbox'
 call plug#end()
 
 "------------------------------ General Settings-------------------
 set encoding=UTF-8
 filetype plugin indent on
 syntax on
+set notimeout
+set mouse=a
+set wildmode
 set wildmenu
 set number relativenumber
 set shiftwidth=4
@@ -33,10 +50,12 @@ set laststatus=2
 set cmdheight=2
 set nu
 set incsearch
+set termguicolors
 "---------------------------- Key Remapping ---------------------------------
-map <C-g> :Goyo<CR>
-map <C-n> :NERDTree<CR>
-map <C-p> :!python %<CR>
+map <C-f>	  :Files<CR>
+map <leader>g :Goyo<CR>
+map <leader>n :NERDTree<CR>
+map <leader>p :!python %<CR>
 "---------------------------Color Settings ---------------------------------
 if (empty($TMUX))
   if (has("nvim"))
@@ -51,23 +70,8 @@ if (empty($TMUX))
   endif
 endif
 
-"colorscheme one	
 colorscheme gruvbox
-"colorscheme palenight
-"colorscheme dracula
 set background=dark
 
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
-
-
-
-
-
-
-
-
-
-
-
-

@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #DD0f0f0f
-background-alt = #DD0f0f0f
+background = #CC0f0f0f
+background-alt = #CC0f0f0f
 ;foreground = ${xrdb:color7:#222}
 foreground = #fff
 foreground-alt = #fff
@@ -52,7 +52,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = San Fransisco Text:size=10;0
-font-1 = Font Awesome 5 Brands Regu;ar:style=Regular:size=11;0
+font-1 = Font Awesome 5 Brands Regular:style=Regular:size=11;0
 font-2 = siji:pixelsize=10;0
 font-3 = Font Awesome 5 Free Regular:style=Regular:size=11;0
 font-4 = Font Awesome 5 Brands;size=11;0
@@ -60,6 +60,7 @@ font-5 = Font Awesome 5 Free Solid:style=Solid:size=11;0
 
 modules-left = bspwm i3
 modules-center = date 
+;spotify
 modules-right = xbacklight pulseaudio memory eth battery 
 
 tray-position = right
@@ -381,7 +382,7 @@ ramp-foreground = ${colors.foreground-alt}
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "  "
+format-prefix = " "
 format = <label>
 exec = python /home/faizan/.config/polybar/spotify_status.py -f '{artist}: {song}'
 format-underline = #1db954

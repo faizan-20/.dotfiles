@@ -15,19 +15,19 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec st 
 
 # kill focused window
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun -theme sidebar
-
+bindsym $mod+d exec rofi -show drun 
+#bindsym $mod+d exec --no-startup-id dmenu_run
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+l focus down
+bindsym $mod+h focus up
+bindsym $mod+k focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -36,10 +36,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -125,10 +125,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -165,12 +165,20 @@ for_window [class="mpv"] floating enable
 for_window [class="GParted"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="qbittorrent"] floating enable
+for_window [class="qBittorrent"] floating enable
 for_window [class="blueman-manager"] floating enable
 for_window [class="vlc"] floating enable
 
+#Workspace applications
+assign [class="zoom"] $ws1
+assign [class="Brave-browser"] $ws2
+
+#Scratchpad
+bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+grave scratchpad show
+
 #key bindings
-bindsym $mod+Shift+f exec pcmanfm 
+bindsym $mod+Shift+f exec thunar 
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 bindsym $mod+shift+s exec systemctl suspend
 bindsym $mod+w exec brave 
@@ -179,7 +187,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Print exec xfce4-screenshooter 
 
 # Autostart
-exec --no-startup-id picom --experimental-backends
+exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id feh --bg-fill --randomize Media/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id kmix
@@ -251,4 +259,5 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 
