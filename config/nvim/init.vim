@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mhinz/vim-startify'
 "Syntax
 	Plug 'lilydjwg/colorizer'
+	Plug 'plasticboy/vim-markdown'
 "Color	
 	Plug 'morhetz/gruvbox'
 call plug#end()
@@ -38,7 +39,7 @@ filetype plugin indent on
 syntax on
 set notimeout
 set mouse=a
-set wildmode
+"set wildmode
 set wildmenu
 set number relativenumber
 set shiftwidth=4

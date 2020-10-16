@@ -24,10 +24,10 @@ bindsym $mod+q kill
 bindsym $mod+d exec rofi -show drun 
 #bindsym $mod+d exec --no-startup-id dmenu_run
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+l focus down
-bindsym $mod+h focus up
-bindsym $mod+k focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -48,7 +48,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v

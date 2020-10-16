@@ -226,7 +226,7 @@ awful.screen.connect_for_each_screen(function(s)
 			s.mytaglist,
             s.mypromptbox,
         },
-        tbox_separator, -- Middle widget
+		tbox_separator,-- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
              spotify_widget({
@@ -601,7 +601,7 @@ beautiful.useless_gap = 5
 
 -- Autostart
 awful.spawn.with_shell("feh --bg-fill --randomize ~/Media/Walls/")
---awful.spawn.with_shell("picom --experimental-backends")
+awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
 awful.spawn.with_shell('kmix')
