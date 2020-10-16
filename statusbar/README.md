@@ -1,0 +1,5 @@
+# dotFiles
+
+# Dependencies
+## i3
+
