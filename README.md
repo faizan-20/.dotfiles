@@ -3,9 +3,9 @@
 # Dependencies
 ## i3
 
-##awesome 
+## awesome 
 
-##dwm
+## dwm
 
 (will add dipendaencies later, too lazy to do it right now)
 
