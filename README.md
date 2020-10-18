@@ -19,5 +19,4 @@
 1. gotop
 2. pulsemixer
 3. dwmblocks
-(will add dipendaencies later, too lazy to do it right now)
 
