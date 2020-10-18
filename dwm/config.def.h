@@ -10,13 +10,13 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=11" };
-static const char dmenufont[]       = "SF Pro Display:size=11";
-static const char col_gray1[]       = "#222222";
+static const char *fonts[]          = { "FiraMono Nerd Font:size=10" };
+static const char dmenufont[]       = "FiraMono Nerd Font:size=10";
+static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray4[]       = "#ffffff";
+static const char col_cyan[]        = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -31,15 +31,18 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class			instance		title			tagsmask	iscentered	isfloating	monitor		scratch key*/
-	{ "Gimp",			NULL,			NULL,			0,			0,			1,			-1,			0 },
-	{ "firefox",		NULL,			NULL,			2,	        0,			0,			-1,			0 },
-	{ "Brave-browser",  NULL,			NULL,			2,		    0,          0,			-1,			0 },
-	{ "zoom",			NULL,			NULL,			1,			0,			1,			-1,			0 },
-	{ "qBittorrent",	NULL,			NULL,			0,			0,			1,			-1,			0 },
-	{ "GParted",		NULL,			NULL,			0,			0,			1,			-1,			0 },
-	{  NULL,			NULL,			"scratchpad",	0,          1,          1,          -1,			's'},
-	{ "gotopcmd",		NULL,			NULL,			0,			1,			1,			-1,			'g'},
+
+	/* class			instance		title			tagsmask	iscentered	isfloating	monitor		scratchkey*/
+	{ "Gimp",			NULL,			NULL,			0,			0,			1,			-1,			 0  },
+	{ "firefox",		NULL,			NULL,			2,	        0,			0,			-1,			 0  },
+	{ "Brave-browser",  NULL,			NULL,			2,		    0,          0,			-1,		     0 	},
+	{ "zoom",			NULL,			NULL,			1,			0,			1,			-1,			 0  },
+	{ "qBittorrent",	NULL,			NULL,			0,			0,			1,			-1,			 0  },
+	{ "GParted",		NULL,			NULL,			0,			0,			1,			-1,			 0  },
+	{  NULL,			NULL,			"scratchpad",	0,          1,          1,          -1,			's' },
+	{ "gotopcmd",		NULL,			NULL,			0,			1,			1,			-1,			'g' },
+	{ "bccmd",			NULL,	        NULL,           1,          1,          1,          -1,         'c' },
+	{ "pulsemixercmd",  NULL,			NULL,           1,          1,          1,          -1,         'p' },
 };
 
 /* layout(s) */
@@ -69,8 +72,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *filecmd[]		= {"st", "-e", "ranger", NULL};
 
-static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL};
+static const char *scratchpadcmd[]  = {"s", "st", "-t", "scratchpad", NULL};
+static const char *gotopcmd[]		= {"g", "st", "-c", "gotopcmd", "-e", "gotop", NULL}; 
+static const char *bccmd[]			= {"c", "st", "-c", "bccmd", "-g", "40x20", "-e", "bc", "-lq", NULL};
+static const char *pulsemixercmd[]	= {"p", "st", "-c", "pulsemixercmd", "-e", "pulsemixer", NULL}; 
+
+
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
@@ -78,6 +87,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 //	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,                       XK_a,      togglescratch,  {.v = pulsemixercmd } },
+	{ MODKEY,                       XK_s,      togglescratch,  {.v = gotopcmd } },
+	{ MODKEY,                       XK_c,      togglescratch,  {.v = bccmd } },
 
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show drun") },	
 	{ MODKEY,			            XK_Return, spawn,          {.v = termcmd } },
@@ -122,6 +134,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_w,	   spawn,		   SHCMD("brave") },
 	{ MODKEY,						XK_e,	   spawn,		   SHCMD("thunar") },
 	{ MODKEY|ShiftMask,				XK_x,	   spawn,		   SHCMD("betterlockscreen -l dim") },
+	{ MODKEY,						XK_r,	   spawn,		   {.v = filecmd} },
 
 	/*Keyboard keys*/
 	{ 0, XF86XK_AudioMute,			spawn,		SHCMD("pamixer -t; dunstify -r 2 -t 750 \"VOL:$(pamixer --get-volume-human)\"") },

@@ -111,6 +111,7 @@ struct Client {
 	int bw, oldbw;
 	unsigned int tags;
 	int isfixed, isfloating, iscentered, isurgent, neverfocus, oldstate, isfullscreen;
+
 	char scratchkey;
 	Client *next;
 	Client *snext;
@@ -760,6 +761,7 @@ destroynotify(XEvent *e)
 
 	if ((c = wintoclient(ev->window)))
 		unmanage(c, 1);
+	
 	else if ((c = wintosystrayicon(ev->window))) {
 		removesystrayicon(c);
 		resizebarwin(selmon);
