@@ -178,10 +178,10 @@ bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
 
 #key bindings
-bindsym $mod+Shift+f exec thunar 
+bindsym $mod+Shift+f exec nemo 
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 bindsym $mod+shift+s exec systemctl suspend
-bindsym $mod+w exec brave 
+bindsym $mod+w exec firefox 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Print exec xfce4-screenshooter 

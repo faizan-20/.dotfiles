@@ -132,7 +132,7 @@ static Key keys[] = {
 	/*Applications*/
 	{ 0,							XK_Print,  spawn,		   SHCMD("xfce4-screenshooter") },
 	{ MODKEY,						XK_w,	   spawn,		   SHCMD("brave") },
-	{ MODKEY,						XK_e,	   spawn,		   SHCMD("thunar") },
+	{ MODKEY,						XK_e,	   spawn,		   SHCMD("nemo") },
 	{ MODKEY|ShiftMask,				XK_x,	   spawn,		   SHCMD("betterlockscreen -l dim") },
 	{ MODKEY,						XK_r,	   spawn,		   {.v = filecmd} },
 

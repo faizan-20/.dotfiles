@@ -344,11 +344,11 @@ globalkeys = gears.table.join(
               {description = "run prompt", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "w", function()
-	awful.util.spawn("brave") end,
+	awful.util.spawn("firefox") end,
 			  {description = 'Browser', group = "FZ"}),
 	-- File Manager
 	awful.key({modkey, "Shift"}, "f", function()
-	awful.util.spawn("thunar") end,
+	awful.util.spawn("nemo") end,
 			  {description = "File Manager", group = "FZ"}),
 	
 	--screesnshot

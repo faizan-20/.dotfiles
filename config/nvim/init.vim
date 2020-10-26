@@ -41,7 +41,7 @@ set notimeout
 set mouse=a
 "set wildmode
 set wildmenu
-set number relativenumber
+set number relativenumber 
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
