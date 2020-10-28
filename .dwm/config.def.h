@@ -39,6 +39,7 @@ static const Rule rules[] = {
 	{ "zoom",			NULL,			NULL,			1,			0,			1,			-1,			 0  },
 	{ "qBittorrent",	NULL,			NULL,			0,			0,			1,			-1,			 0  },
 	{ "GParted",		NULL,			NULL,			0,			0,			1,			-1,			 0  },
+	{ "Spotify",		NULL,			NULL,			3,			0,			0,			-1,			 0	},
 	{  NULL,			NULL,			"scratchpad",	0,          1,          1,          -1,			's' },
 	{ "gotopcmd",		NULL,			NULL,			0,			1,			1,			-1,			'g' },
 	{ "bccmd",			NULL,	        NULL,           1,          1,          1,          -1,         'c' },
@@ -85,19 +86,19 @@ static const char *pulsemixercmd[]	= {"p", "st", "-c", "pulsemixercmd", "-e", "p
 static Key keys[] = {
 	/*Standard*/
 	/* modifier                     key        function        argument */
-//	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_a,      togglescratch,  {.v = pulsemixercmd } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = gotopcmd } },
 	{ MODKEY,                       XK_c,      togglescratch,  {.v = bccmd } },
 
-	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show drun") },	
+//	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show drun") },	
 	{ MODKEY,			            XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
@@ -134,6 +135,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_w,	   spawn,		   SHCMD("firefox") },
 	{ MODKEY,						XK_e,	   spawn,		   SHCMD("nemo") },
 	{ MODKEY|ShiftMask,				XK_x,	   spawn,		   SHCMD("betterlockscreen -l dim") },
+	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   SHCMD("LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify") },
 	{ MODKEY,						XK_r,	   spawn,		   {.v = filecmd} },
 
 	/*Keyboard keys*/

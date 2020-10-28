@@ -1,0 +1,126 @@
+From f64c2f83a2e3ee349fe11100526110dfdf47067a Mon Sep 17 00:00:00 2001
+From: Kirill Bugaev <kirill.bugaev87@gmail.com>
+Date: Wed, 27 Mar 2019 01:28:56 +0800
+Subject: [PATCH] Some glyphs can be not present in font defined by default.
+ For this glyphs st uses font-config and try to find them in font cache first.
+ This patch append font defined in `font2` variable to the beginning of font
+ cache. So it will be used as spare font.
+
+---
+ config.def.h |  1 +
+ x.c          | 66 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 67 insertions(+)
+
+diff --git a/config.def.h b/config.def.h
+index 482901e..88eee0f 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -6,6 +6,7 @@
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+ static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font2 = "Roboto Mono for Powerline:pixelsize=12:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+diff --git a/x.c b/x.c
+index 5828a3b..052b10b 100644
+--- a/x.c
++++ b/x.c
+@@ -149,6 +149,7 @@ static void xhints(void);
+ static int xloadcolor(int, const char *, Color *);
+ static int xloadfont(Font *, FcPattern *);
+ static void xloadfonts(char *, double);
++static void xloadsparefont();
+ static void xunloadfont(Font *);
+ static void xunloadfonts(void);
+ static void xsetenv(void);
+@@ -296,6 +297,7 @@ zoomabs(const Arg *arg)
+ {
+ 	xunloadfonts();
+ 	xloadfonts(usedfont, arg->f);
++	xloadsparefont();
+ 	cresize(0, 0);
+ 	redraw();
+ 	xhints();
+@@ -977,6 +979,67 @@ xloadfonts(char *fontstr, double fontsize)
+ 	FcPatternDestroy(pattern);
+ }
+ 
++void
++xloadsparefont()
++{
++	FcPattern *fontpattern, *match;
++	FcResult result;
++
++	/* add font2 to font cache as first 4 entries */
++	if ( font2[0] == '-' )
++		fontpattern = XftXlfdParse(font2, False, False);
++	else
++		fontpattern = FcNameParse((FcChar8 *)font2);
++	if ( fontpattern ) {
++		/* Allocate memory for the new cache entries. */
++		frccap += 4;
++		frc = xrealloc(frc, frccap * sizeof(Fontcache));
++		/* add Normal */
++		match = FcFontMatch(NULL, fontpattern, &result);
++		if ( match ) 
++			frc[frclen].font = XftFontOpenPattern(xw.dpy, match);
++			if ( frc[frclen].font ) {
++				frc[frclen].flags = FRC_NORMAL;
++				frclen++;
++			} else
++				FcPatternDestroy(match);
++		/* add Italic */
++		FcPatternDel(fontpattern, FC_SLANT);
++		FcPatternAddInteger(fontpattern, FC_SLANT, FC_SLANT_ITALIC);
++		match = FcFontMatch(NULL, fontpattern, &result);
++		if ( match )
++			frc[frclen].font = XftFontOpenPattern(xw.dpy, match);
++			if ( frc[frclen].font ) {
++				frc[frclen].flags = FRC_ITALIC;
++				frclen++;
++			} else
++				FcPatternDestroy(match);
++		/* add Italic Bold */
++		FcPatternDel(fontpattern, FC_WEIGHT);
++		FcPatternAddInteger(fontpattern, FC_WEIGHT, FC_WEIGHT_BOLD);
++		match = FcFontMatch(NULL, fontpattern, &result);
++		if ( match )
++			frc[frclen].font = XftFontOpenPattern(xw.dpy, match);
++			if ( frc[frclen].font ) {
++				frc[frclen].flags = FRC_ITALICBOLD;
++				frclen++;
++			} else 
++				FcPatternDestroy(match);
++		/* add Bold */
++		FcPatternDel(fontpattern, FC_SLANT);
++		FcPatternAddInteger(fontpattern, FC_SLANT, FC_SLANT_ROMAN);
++		match = FcFontMatch(NULL, fontpattern, &result);
++		if ( match )
++			frc[frclen].font = XftFontOpenPattern(xw.dpy, match);
++			if ( frc[frclen].font ) {
++				frc[frclen].flags = FRC_BOLD;
++				frclen++;
++			} else 
++				FcPatternDestroy(match);
++		FcPatternDestroy(fontpattern);
++	}
++}
++
+ void
+ xunloadfont(Font *f)
+ {
+@@ -1057,6 +1120,9 @@ xinit(int cols, int rows)
+ 	usedfont = (opt_font == NULL)? font : opt_font;
+ 	xloadfonts(usedfont, 0);
+ 
++	/* spare font (font2) */
++	xloadsparefont();
++
+ 	/* colors */
+ 	xw.cmap = XDefaultColormap(xw.dpy, xw.scr);
+ 	xloadcols();
+-- 
+2.21.0
+
