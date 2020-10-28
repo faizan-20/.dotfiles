@@ -14,5 +14,8 @@
 1. autotiling (AUR)
 2. xidlehook (AUR)
 3. polybar (AUR)
+## For DWM
+1. dwmblocks
+2. xss-lock
 
 
