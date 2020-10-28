@@ -15,8 +15,4 @@
 2. xidlehook (AUR)
 3. polybar (AUR)
 
-## For DWM
-1. gotop (AUR)
-2. pulsemixer 
-3. dwmblocks 
 
