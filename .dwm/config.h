@@ -42,8 +42,8 @@ static const Rule rules[] = {
 	{ "Spotify",		NULL,			NULL,			3,			0,			0,			-1,			 0	},
 	{  NULL,			NULL,			"scratchpad",	0,          1,          1,          -1,			's' },
 	{ "gotopcmd",		NULL,			NULL,			0,			1,			1,			-1,			'g' },
-	{ "bccmd",			NULL,	        NULL,           1,          1,          1,          -1,         'c' },
-	{ "pulsemixercmd",  NULL,			NULL,           1,          1,          1,          -1,         'p' },
+	{ "bccmd",			NULL,	        NULL,           0,          1,          1,          -1,         'c' },
+	{ "pulsemixercmd",  NULL,			NULL,           0,          1,          1,          -1,         'p' },
 };
 
 /* layout(s) */
