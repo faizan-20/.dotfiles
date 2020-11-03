@@ -9,8 +9,8 @@ window:
       x: 0
       y: 0
   padding:
-    x: 10
-    y: 10
+    x: 6
+    y: 6
 
   decorations: full
 
@@ -32,7 +32,7 @@ font:
     family: FiraMono Nerd Font
     style: Italic
 
-  size: 14 
+  size: 10 
 
   offset:
     x: 0

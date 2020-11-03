@@ -57,6 +57,10 @@ map <C-f>	  :Files<CR>
 map <leader>g :Goyo<CR>
 map <leader>n :NERDTree<CR>
 map <leader>p :!python %<CR>
+
+map <leader>l :bnext<CR>
+map <leader>h :bprevious<CR>
+map <leader>d :bdelete<CR>
 "---------------------------Color Settings ---------------------------------
 if (empty($TMUX))
   if (has("nvim"))

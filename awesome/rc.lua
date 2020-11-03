@@ -340,11 +340,11 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey },            "d",     function ()
-	awful.util.spawn("rofi -show drun")      end,
+	awful.util.spawn("dmenu_run")      end,
               {description = "run prompt", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "w", function()
-	awful.util.spawn("firefox") end,
+	awful.util.spawn("brave") end,
 			  {description = 'Browser', group = "FZ"}),
 	-- File Manager
 	awful.key({modkey, "Shift"}, "f", function()
@@ -605,9 +605,3 @@ awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
 awful.spawn.with_shell('kmix')
-
-
-
-
-
-

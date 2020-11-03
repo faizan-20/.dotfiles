@@ -6,7 +6,7 @@
   background-color: transparent;
   width: 512px;
 
-  font: "Knack Nerd Font 14";
+  font: "FiraMono Nerd Font 14";
 }
 
 inputbar {

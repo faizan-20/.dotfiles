@@ -20,9 +20,8 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+q kill
 
-# start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun 
-#bindsym $mod+d exec --no-startup-id dmenu_run
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -181,7 +180,7 @@ bindsym $mod+grave scratchpad show
 bindsym $mod+Shift+f exec nemo 
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 bindsym $mod+shift+s exec systemctl suspend
-bindsym $mod+w exec firefox 
+bindsym $mod+w exec brave 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Print exec xfce4-screenshooter 
