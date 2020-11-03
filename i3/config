@@ -187,7 +187,7 @@ bindsym Print exec xfce4-screenshooter
 
 # Autostart
 exec_always --no-startup-id picom --experimental-backends
-exec_always --no-startup-id feh --bg-fill --randomize Media/Walls
+exec_always --no-startup-id feh --bg-fill --randomize ~/Wallpapers/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id kmix
 exec_always --no-startup-id blueman-applet

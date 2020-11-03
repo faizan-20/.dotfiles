@@ -600,7 +600,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 
 -- Autostart
-awful.spawn.with_shell("feh --bg-fill --randomize ~/Media/Walls/")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Wallpapers/Walls/")
 awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
