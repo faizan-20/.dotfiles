@@ -1,5 +1,7 @@
+#env
+env: 
+    TERM: xterm-256color
 #Window 
-
 window:
   dimensions:
     columns: 0
@@ -9,16 +11,16 @@ window:
       x: 0
       y: 0
   padding:
-    x: 6
-    y: 6
+    x: 10
+    y: 10
 
   decorations: full
 
 scrolling:
-  history: 10000
-  multiplier: 3
+  history: 5000
+  #multiplier: 3
 background_opacity: 0.8
-window.dynami_title: true
+#window.dynami_title: true
 
 font:
   normal:
@@ -32,7 +34,7 @@ font:
     family: FiraMono Nerd Font
     style: Italic
 
-  size: 10 
+  size: 11 
 
   offset:
     x: 0
@@ -44,6 +46,7 @@ font:
 
   use_thin_strokes: false
 
+draw_bold_text_with_bright_colors: true
 # Colors (Gruvbox dark)
 colors:
   # Default colors
