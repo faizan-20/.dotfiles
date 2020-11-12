@@ -605,3 +605,9 @@ awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
 awful.spawn.with_shell('kmix')
+
+-- _____    ____   ___
+--|  ___|  |___ \ / _ \  
+--| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
+--|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
+--|_|      |_____|\___/

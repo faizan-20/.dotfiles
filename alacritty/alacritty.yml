@@ -11,14 +11,17 @@ window:
       x: 0
       y: 0
   padding:
-    x: 10
-    y: 10
+    x: 6
+    y: 6
 
+  #dynamic_padding: true
   decorations: full
 
 scrolling:
-  history: 5000
+  history: 10000
   multiplier: 3
+
+
 background_opacity: 0.8
 window.dynami_title: true
 
@@ -43,7 +46,7 @@ font:
 
   offset:
     x: 0
-    y: 1
+    y: 0
 
   glyph_offset:
     x: 0
@@ -84,3 +87,8 @@ colors:
 cursor:
   style: Block
   unfocused_hollow: true 
+# _____    ____   ___
+#|  ___|  |___ \ / _ \  
+#| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
+#|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
+#|_|      |_____|\___/
