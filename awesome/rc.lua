@@ -55,7 +55,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "st"
+terminal = "alacritty"
 editor = os.getenv("nvim") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -344,11 +344,19 @@ globalkeys = gears.table.join(
               {description = "run prompt", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "w", function()
-	awful.util.spawn("brave") end,
+	awful.util.spawn("firefox") end,
 			  {description = 'Browser', group = "FZ"}),
+	-- feh 
+	awful.key({ modkey, "Shift" }, "w", function()
+	awful.util.spawn("feh --bg-fill --randomize ~/Wallpapers/Walls/") end,
+			  {description = 'Walpapper', group = "FZ"}),
 	-- File Manager
-	awful.key({modkey, "Shift"}, "f", function()
+	awful.key({modkey}, "e", function()
 	awful.util.spawn("nemo") end,
+			  {description = "File Manager", group = "FZ"}),
+	-- ranger FM
+			  awful.key({modkey}, "r", function()
+	awful.util.spawn("alacritty -e ranger") end,
 			  {description = "File Manager", group = "FZ"}),
 	
 	--screesnshot
@@ -359,6 +367,15 @@ globalkeys = gears.table.join(
     awful.key({modkey, "Shift" }, "x", function()
     awful.util.spawn("betterlockscreen -l dim") end,
     	      {description = "screen lock", group = "FZ"}),
+    -- picom
+    awful.key({modkey, "Control" }, "p", function()
+    awful.util.spawn("picom --experimental-backends") end,
+    	      {description = "spawn picom", group = "FZ"}),
+    
+	awful.key({modkey, "Shift" }, "p", function()
+    awful.util.spawn("killall picom") end,
+    	      {description = "kill picom", group = "FZ"}),
+	
     --Brightness
     awful.key({},'XF86MonBrightnessUp',
      function()
@@ -568,6 +585,8 @@ awful.rules.rules = {
        properties = { tag = "2" } },
 	{ rule = { class = "Brave-browser"},
 		properties = { tag = "2"}	},
+	{ rule = { class = "firefox"},
+		properties = { tag = "2"}	},
    }
 	
 -- }}}
@@ -604,7 +623,11 @@ awful.spawn.with_shell("feh --bg-fill --randomize ~/Wallpapers/Walls/")
 awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell('nm-applet')
 awful.spawn.with_shell('blueman-applet')
-awful.spawn.with_shell('kmix')
+awful.spawn.with_shell('dunst')
+awful.spawn.with_shell('kdeconnect-indicator')
+awful.spawn.with_shell('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
+awful.spawn.with_shell('xss-lock -n dim-screen.sh -- betterlockscreen -l dim -n')
+
 
 -- _____    ____   ___
 --|  ___|  |___ \ / _ \  

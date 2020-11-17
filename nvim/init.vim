@@ -1,6 +1,5 @@
 "---------------------------------mapleader-------------------------
 let mapleader = " "
-
 "----------------------------------airline-----------------------------
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -11,9 +10,9 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
-"let g:airline_theme='onedark'
 "let g:airline_theme='minimalist'
 let g:airline_theme='gruvbox'
+"let g:airline_theme='onedark'
 
 "------------------------------------ Plugin --------------------------
 call plug#begin('~/.vim/plugged')
@@ -25,13 +24,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'francoiscabrol/ranger.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'mhinz/vim-startify'
 "Syntax
 	Plug 'lilydjwg/colorizer'
 	Plug 'plasticboy/vim-markdown'
 "Color	
 	Plug 'morhetz/gruvbox'
+	Plug 'gosukiwi/vim-atom-dark'
+	Plug 'kristijanhusak/vim-hybrid-material'
+	Plug 'ajh17/Spacegray.vim'
 	Plug 'joshdick/onedark.vim'
-	Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "------------------------------ General Settings-------------------
@@ -39,34 +41,36 @@ set encoding=UTF-8
 filetype plugin indent on
 syntax on
 set mouse=a
-set wildmode=full
-set wildmenu
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set wildmode=full wildmenu
+set shiftwidth=4 tabstop=4 softtabstop=4 expandtab smarttab
 set cursorline
-set smartindent
 set laststatus=2
-set nu relativenumber
+set relativenumber
 set incsearch
-set termguicolors
+set termguicolors t_Co=256
 set nowrap 
-set smarttab
-set autoindent
+set autoindent smartindent
 set noshowmode
 set clipboard=unnamedplus
 "---------------------------- Key Remapping ---------------------------------
-map <M-f>	  :Files<CR>						
+map <C-p>	  :Files<CR>						
 map <leader>g :Goyo<CR>
 map <M-e>	  :CocCommand explorer<CR>
+map <M-s>	  :Startify<CR>
+
 map <leader>p :!python %<CR>
 map <F5>	  :!gcc % -o %< && ./%<<CR>
 
-map <leader><tab> :bnext<CR>
-map <leader><S-tab> :bprevious<CR>
-map <leader>d :bdelete<CR>
-"---------------------------Color Settings ---------------------------------
+map <C-tab>	  :bnext<CR>
+map <M-tab>   :bprevious<CR>
+map <M-d>     :bdelete<CR>
+map <leader>l :set bg=light<CR>
+map <leader>d :set bg=dark<CR>
 
+imap jk <ESC>
+imap kj <ESC>
+"---------------------------Color Settings ---------------------------------
+let g:gruvbox_italic=1
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -83,23 +87,45 @@ if (empty($TMUX))
   endif
 endif
 
-let g:onedark_hide_endofbuffer=1
-let g:onedark_termcolors=256
-let g:onedark_terminal_italics=1
+set bg=dark
 
 colorscheme gruvbox 
 "colorscheme onedark
-"colorscheme nord
-set background=dark 
+"colorscheme spacegray
+"colorscheme hybrid_reverse
+"colorscheme atom-dark-256 
 
-hi LineNr ctermbg=NONE guibg=NONE
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
+"-------------------------- Startify settings--------------------------------
+    let g:startify_lists = [
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'files',     'header': ['   Recent Files']            },
+          \ { 'type': 'dir',       'header': ['   Current Dir '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+
+    let g:startify_custom_header = [
+            \ '                                ',
+            \ '            __                  ',
+            \ '    __  __ /\_\    ___ ___      ',
+            \ '   /\ \/\ \\/\ \ /'' __` __`\   ',
+            \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \   ',
+            \ '    \ \___/  \ \_\ \_\ \_\ \_\  ',
+            \ '     \/__/    \/_/\/_/\/_/\/_/  ',
+            \ ]
+
+let g:startify_bookmarks = [ {'z': '~/.zshrc'}, {'v': '~/.config/nvim/init.vim'}, {'c': '~/.config'}, {'p': '~/Code'} ]
+let g:startify_change_to_dir = 1
+let g:startify_fortune_use_unicode = 1
+
 "-------------------------- coc-settings ------------------------------------
 source ~/.config/nvim/coc.vim
+"-------------------------- The End -----------------------------------------
 
-" _____    ____   ___
+"_____    ____   ___
 "|  ___|  |___ \ / _ \  
 "| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
 "|  _|_____/ __/| |_| | git - https://github.com/faizan-20/

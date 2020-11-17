@@ -15,7 +15,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st 
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+q kill
@@ -184,6 +184,7 @@ bindsym $mod+w exec firefox
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Print exec xfce4-screenshooter 
+bindsym $mod+Shift+w exec feh --bg-fill --randomize ~/Wallpapers/Walls
 
 # Autostart
 exec_always --no-startup-id picom --experimental-backends
