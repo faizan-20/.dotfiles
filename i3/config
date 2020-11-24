@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango: System San Francisco Display 10
+font pango: JetBrainsMono Nerd Font 10
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -171,13 +171,14 @@ for_window [class="vlc"] floating enable
 #Workspace applications
 assign [class="zoom"] $ws1
 assign [class="Brave-browser"] $ws2
+assign [class="firefox"] $ws2
 
 #Scratchpad
 bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
 
 #key bindings
-bindsym $mod+Shift+f exec nemo 
+bindsym $mod+Shift+f exec pcmanfm 
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 bindsym $mod+shift+s exec systemctl suspend
 bindsym $mod+w exec firefox 
@@ -185,6 +186,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Print exec xfce4-screenshooter 
 bindsym $mod+Shift+w exec feh --bg-fill --randomize ~/Wallpapers/Walls
+bindsym $mod+shift+p exec killall picom
+bindsym $mod+p exec picom --experimental-backends
 
 # Autostart
 exec_always --no-startup-id picom --experimental-backends

@@ -4,8 +4,8 @@ let mapleader = " "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#formatter = 'default'
@@ -22,18 +22,17 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'junegunn/goyo.vim'
-	Plug 'francoiscabrol/ranger.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'mhinz/vim-startify'
+    Plug 'vifm/vifm.vim'
 "Syntax
 	Plug 'lilydjwg/colorizer'
 	Plug 'plasticboy/vim-markdown'
+    Plug 'kien/rainbow_parentheses.vim'
 "Color	
 	Plug 'morhetz/gruvbox'
-	Plug 'gosukiwi/vim-atom-dark'
 	Plug 'kristijanhusak/vim-hybrid-material'
 	Plug 'ajh17/Spacegray.vim'
-	Plug 'joshdick/onedark.vim'
 call plug#end()
 
 "------------------------------ General Settings-------------------
@@ -45,10 +44,9 @@ set wildmode=full wildmenu
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab smarttab
 set cursorline
 set laststatus=2
-set relativenumber
+set nu relativenumber
 set incsearch
 set termguicolors t_Co=256
-set nowrap 
 set autoindent smartindent
 set noshowmode
 set clipboard=unnamedplus
@@ -57,6 +55,7 @@ map <C-p>	  :Files<CR>
 map <leader>g :Goyo<CR>
 map <M-e>	  :CocCommand explorer<CR>
 map <M-s>	  :Startify<CR>
+map <leader>r :Vifm<CR>
 
 map <leader>p :!python %<CR>
 map <F5>	  :!gcc % -o %< && ./%<<CR>
@@ -90,10 +89,8 @@ endif
 set bg=dark
 
 colorscheme gruvbox 
-"colorscheme onedark
 "colorscheme spacegray
 "colorscheme hybrid_reverse
-"colorscheme atom-dark-256 
 
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
@@ -117,7 +114,7 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
             \ '     \/__/    \/_/\/_/\/_/\/_/  ',
             \ ]
 
-let g:startify_bookmarks = [ {'z': '~/.zshrc'}, {'v': '~/.config/nvim/init.vim'}, {'c': '~/.config'}, {'p': '~/Code'} ]
+let g:startify_bookmarks = [ {'z': '~/.zshrc'}, {'v': '~/.config/nvim/init.vim'}, {'c': '~/.config'}, {'p': '~/Code'}, {'s': '~/.suckless/'} ]
 let g:startify_change_to_dir = 1
 let g:startify_fortune_use_unicode = 1
 

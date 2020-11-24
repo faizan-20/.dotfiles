@@ -39,7 +39,7 @@ font:
     style: Italic
 
   bold_italic:
-      family: Hack
+      family: Hack Nerd Font
       style: Bold Italic
 
   size: 10 
