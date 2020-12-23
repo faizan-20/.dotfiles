@@ -1,4 +1,4 @@
-* {
+ * {
   background-color: #282C33;
   border-color: #2e343f;
   text-color: #8ca0aa;
@@ -6,7 +6,7 @@
   background-color: transparent;
   width: 512px;
 
-  font: "FiraMono Nerd Font 14";
+  font: "SF Pro 14";
 }
 
 inputbar {
@@ -55,8 +55,3 @@ element selected {
   background-color: #2e343f;
 }
 
-# _____    ____   ___
-#|  ___|  |___ \ / _ \  
-#| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
-#|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
-#|_|      |_____|\___/

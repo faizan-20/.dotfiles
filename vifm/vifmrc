@@ -102,7 +102,7 @@ filextype *.ps,*.eps,*.ps.gz
 " Djvu
 filextype *.djvu
         \ {View in zathura}
-        \ zathura %f,
+        \ evince %f &,
         \ {View in apvlv}
         \ apvlv %f,
 
@@ -350,8 +350,9 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " ------------------------------------------------------------------------------
 
-" Sample mappings
+" Key bindings
 
+nnoremap cd :cd<cr>
 "Open all images in current directory in sxiv thumbnail mode
 nnoremap sx :!sxiv -t %d & <cr>
 
@@ -393,6 +394,8 @@ nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
+map > :!vifmimg inc<CR>
+map < :!vifmimg dec<CR>
 " ------------------------------------------------------------------------------
 
 " Various customization examples

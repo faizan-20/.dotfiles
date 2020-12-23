@@ -193,12 +193,14 @@ bindsym $mod+p exec picom --experimental-backends
 exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id feh --bg-fill --randomize ~/Wallpapers/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id kmix
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id dunst
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 360 "betterlockscreen -l dim" " " &
+exec_always --no-startup-id xss-lock betterlockscreen -l dim 
+exec_always --no-startup-id kdeconnect-indicator 
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+
 
 new_window 1pixel
 

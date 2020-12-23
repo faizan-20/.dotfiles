@@ -356,7 +356,7 @@ globalkeys = gears.table.join(
 			  {description = "File Manager", group = "FZ"}),
 	-- ranger FM
 			  awful.key({modkey}, "r", function()
-	awful.util.spawn("alacritty -e ranger") end,
+	awful.util.spawn("alacritty -e vifm") end,
 			  {description = "File Manager", group = "FZ"}),
 	
 	--screesnshot
@@ -375,7 +375,7 @@ globalkeys = gears.table.join(
 	awful.key({modkey, "Shift" }, "p", function()
     awful.util.spawn("killall picom") end,
     	      {description = "kill picom", group = "FZ"}),
-	
+
     --Brightness
     awful.key({},'XF86MonBrightnessUp',
      function()
