@@ -5,12 +5,14 @@ export PATH=$PATH:~/.local/bin/statusbar
 
 # Setting up Defaults
 export EDITOR='nvim'
-export TERMINAL="alacritty"
+export TERMINAL="st-256color"
 export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
 export LANG='en_US.UTF-8'
 
 export UPDATE_ZSH_DAYS=15
+
+#export QT_QPA_PLATFORMTHEME='qt5ct'
 
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -40,17 +42,19 @@ alias :q='exit'
 alias ll='exa --group-directories-first'
 alias ls='exa -l --group-directories-first'
 alias la='exa -a --group-directories-first'
-alias lal='exa -al --group-directories-first'
+alias al='exa -al --group-directories-first'
 
 alias pac='sudo pacman'
 alias clup='pac -Rns $(pac -Qdtq)'
 
-alias rg='ranger'
+#alias rg='ranger'
 alias vf='~/.config/vifm/scripts/vifmrun'
+alias fehw='feh --bg-scale'
 
 alias html='cd ~/Code/HTML'
 alias c='cd ~/Code/C'
 
+alias mindustry='./Games/mindustry-linux-64-bit/Mindustry'
 # Autostart
 
 #/opt/shell-color-scripts/colorscript.sh random

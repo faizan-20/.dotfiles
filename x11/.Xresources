@@ -8,7 +8,7 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-!!*.font: SF Pro:size=14
+!*.font: SF Pro:size=14
 
 ! hard contrast: *background: #1d2021
 *background: #282828
