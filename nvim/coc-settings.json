@@ -1,7 +1,7 @@
 
 {
 	"suggest.noselect": false,
-	"coc.preferences.extensionUpdateCheck": "daily",
+	"coc.preferences.extensionUpdateCheck": "weekly",
 
 	// python
 	"python.jediEnabled": false,

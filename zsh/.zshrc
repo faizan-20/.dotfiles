@@ -2,6 +2,8 @@ set -o vi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/faizan/.oh-my-zsh"
 export PATH=$PATH:~/.local/bin/statusbar
+export PATH=$PATH:~/.local/bin/scripts
+export PATH="/home/faizan/.local/bin:$PATH"
 
 # Setting up Defaults
 export EDITOR='nvim'
@@ -31,6 +33,12 @@ else
   export EDITOR='nvim'
 fi
 
+## Import the colors.
+# "${HOME}/.cache/wal/colors.sh"
+#
+## Create the alias.
+#alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
+
 # Aliases
 alias fz='nvim `find . | fzf --height=10`'
 
@@ -47,9 +55,10 @@ alias al='exa -al --group-directories-first'
 alias pac='sudo pacman'
 alias clup='pac -Rns $(pac -Qdtq)'
 
-#alias rg='ranger'
+alias rg='ranger'
 alias vf='~/.config/vifm/scripts/vifmrun'
-alias fehw='feh --bg-scale'
+alias fehw='feh --bg-fill'
+alias ttyc='tty-clock -c -s -S -b -t'
 
 alias html='cd ~/Code/HTML'
 alias c='cd ~/Code/C'
@@ -64,3 +73,19 @@ fortune -s
 
 ### starship prompt ###
 eval "$(starship init zsh)"
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+#cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+wal-fill() {
+    wal -n -i "$HOME/Wallpapers/Walls"
+    feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
+}
