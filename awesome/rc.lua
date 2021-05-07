@@ -352,11 +352,11 @@ globalkeys = gears.table.join(
 			  {description = 'Walpapper', group = "FZ"}),
 	-- File Manager
 	awful.key({modkey}, "e", function()
-	awful.util.spawn("nemo") end,
+	awful.util.spawn("pcmanfm") end,
 			  {description = "File Manager", group = "FZ"}),
 	-- ranger FM
 			  awful.key({modkey}, "r", function()
-	awful.util.spawn("alacritty -e vifm") end,
+	awful.util.spawn("alacritty -e ranger") end,
 			  {description = "File Manager", group = "FZ"}),
 	
 	--screesnshot
@@ -566,6 +566,7 @@ awful.rules.rules = {
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "GParted",
 		  "qBittorrent",
+          "Timeshift-gtk",
 		  "zoom",},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -582,7 +583,7 @@ awful.rules.rules = {
 
     -- Set programs on certain tag
 	{ rule = { class = "zoom"},
-       properties = { tag = "2" } },
+       properties = { tag = "1" } },
 	{ rule = { class = "Brave-browser"},
 		properties = { tag = "2"}	},
 	{ rule = { class = "firefox"},
@@ -619,14 +620,13 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 
 -- Autostart
-awful.spawn.with_shell("feh --bg-fill --randomize ~/Wallpapers/Walls/")
-awful.spawn.with_shell("picom --experimental-backends")
-awful.spawn.with_shell('nm-applet')
-awful.spawn.with_shell('blueman-applet')
-awful.spawn.with_shell('dunst')
-awful.spawn.with_shell('kdeconnect-indicator')
-awful.spawn.with_shell('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
-awful.spawn.with_shell('xss-lock -n dim-screen.sh -- betterlockscreen -l dim -n')
+--awful.spawn.with_shell("feh --bg-fill --randomize ~/Wallpapers/Walls/")
+--awful.spawn.with_shell("picom --experimental-backends")
+--awful.spawn.with_shell('nm-applet')
+--awful.spawn.with_shell('blueman-applet')
+--awful.spawn.with_shell('dunst')
+--awful.spawn.with_shell('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
+--awful.spawn.with_shell('xss-lock -n dim-screen.sh -- betterlockscreen -l dim -n')
 
 
 -- _____    ____   ___

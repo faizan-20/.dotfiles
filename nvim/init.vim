@@ -56,9 +56,9 @@ map <leader>r   :Vifm<CR>
 map <F4>        :!python %<CR>
 map <F5>        :!gcc % -o %< && ./%<<CR>
 
-map <C-tab>	    :bnext<CR>
-map <M-tab>     :bprevious<CR>
-map <M-d>       :bdelete<CR>
+map <M-tab>	    :bnext<CR>
+map <C-tab>     :bprevious<CR>
+map <M-w>       :bdelete<CR>
 map <leader>l   :set bg=light<CR>
 map <leader>d   :set bg=dark<CR>
 map <leader>g   :colorscheme gruvbox<CR>

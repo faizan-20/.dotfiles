@@ -4,15 +4,16 @@
 #Window 
 window:
   dimensions:
-    columns: 0
-    lines: 0
+    columns: 79
+    lines: 24
   
   position:
-      x: 0
-      y: 0
+    x: 480
+    y: 250
+  
   padding:
-      x: 6
-      y: 6
+    x: 6
+    y: 6
 
   dynamic_padding: true
   decorations: full
@@ -58,8 +59,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '0x1d2021'
-    background: '0x282828'
+    # hard contrast: background = '0x1d2021' '0x282828'
+    background: '0x1d2021'
     # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 

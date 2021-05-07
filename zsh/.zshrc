@@ -1,43 +1,33 @@
 set -o vi
-# Path to your oh-my-zsh installation.
-export ZSH="/home/faizan/.oh-my-zsh"
+#PATH="$HOME/.local/bin${PATH:+:${PATH}}"
 export PATH=$PATH:~/.local/bin/statusbar
 export PATH=$PATH:~/.local/bin/scripts
 export PATH="/home/faizan/.local/bin:$PATH"
 
 # Setting up Defaults
 export EDITOR='nvim'
-export TERMINAL="st-256color"
+export TERMINAL="alacritty"
 export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
 export LANG='en_US.UTF-8'
 
-export UPDATE_ZSH_DAYS=15
+autoload -U compinit && compinit -u
+zstyle ':completion:*' menu select
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-#export QT_QPA_PLATFORMTHEME='qt5ct'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
 
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
+# Enable searching through history
+bindkey '^R' history-incremental-pattern-search-backward
 
-plugins=(
-    git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+# History in cache directory:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.cache/zsh/history
 
-source $ZSH/oh-my-zsh.sh
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
-
-## Import the colors.
-# "${HOME}/.cache/wal/colors.sh"
-#
-## Create the alias.
-#alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
 # Aliases
 alias fz='nvim `find . | fzf --height=10`'
@@ -46,11 +36,12 @@ alias v='nvim'
 alias vim='nvim'
 alias :q='exit'
 
-
 alias ll='exa --group-directories-first'
 alias ls='exa -l --group-directories-first'
 alias la='exa -a --group-directories-first'
 alias al='exa -al --group-directories-first'
+
+alias wp='wpg -s ~/Wallpapers/Walls/ ; timeout 0.5s xsettingsd -c ~/.config/xsettingsd/xsettingsd.conf ; feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"'
 
 alias pac='sudo pacman'
 alias clup='pac -Rns $(pac -Qdtq)'
@@ -60,17 +51,18 @@ alias vf='~/.config/vifm/scripts/vifmrun'
 alias fehw='feh --bg-fill'
 alias ttyc='tty-clock -c -s -S -b -t'
 
-alias html='cd ~/Code/HTML'
 alias c='cd ~/Code/C'
 
-alias mindustry='./Games/mindustry-linux-64-bit/Mindustry'
-# Autostart
-
-#/opt/shell-color-scripts/colorscript.sh random
-#echo ""
-#fortune ~/.local/bin/quotes/quotes
+### Autostart ###
 fortune -s
 
+### Plugins ###
+source /home/faizan/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 ### starship prompt ###
 eval "$(starship init zsh)"
 
@@ -78,14 +70,10 @@ eval "$(starship init zsh)"
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+(cat ~/.config/wpg/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-#cat ~/.cache/wal/sequences
+#cat ~/.config/wpg/sequences &
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
-wal-fill() {
-    wal -n -i "$HOME/Wallpapers/Walls"
-    feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
-}
+#source ~/.cache/wal/colors-tty.sh
