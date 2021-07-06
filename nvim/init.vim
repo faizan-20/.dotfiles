@@ -4,14 +4,14 @@ let mapleader = " "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline#extensions#tabline#left_sep = ''
-"let g:airline#extensions#tabline#left_alt_sep = ''
-"let g:airline#extensions#tabline#right_sep = ''
-"let g:airline#extensions#tabline#right_alt_sep = ''
-"let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
-"let g:airline_theme='gruvbox'
+"let g:airline_theme='minimalist'
+let g:airline_theme='gruvbox'
 
 "------------------------------------ Plugin --------------------------
 call plug#begin('~/.vim/plugged')
@@ -23,6 +23,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vifm/vifm.vim'
+    Plug 'mattn/emmet-vim'
+    Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 "Syntax
 	Plug 'lilydjwg/colorizer'
 	Plug 'plasticboy/vim-markdown'
@@ -42,10 +44,13 @@ set cursorline
 set laststatus=2
 set nu relativenumber
 set incsearch
-"set termguicolors t_Co=256
+set termguicolors 
+set t_Co=256
 set autoindent smartindent
 "set noshowmode
 set clipboard=unnamedplus
+
+"let g:user_emmet_leader_key='<A-c>'
 
 "---------------------------- Key Remapping ---------------------------
 map <C-p>	    :Files<CR>
@@ -61,28 +66,25 @@ map <C-tab>     :bprevious<CR>
 map <M-w>       :bdelete<CR>
 map <leader>l   :set bg=light<CR>
 map <leader>d   :set bg=dark<CR>
-map <leader>g   :colorscheme gruvbox<CR>
 
 imap jk <ESC>
 imap kj <ESC>
 
 "---------------------------Color Settings ----------------------------
-"let g:gruvbox_italic=1
-"if (empty($TMUX))
-"  if (has("nvim"))
-"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"endif
-"
-"set bg=dark
+let g:gruvbox_italic=1
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
-colorscheme wal
-"colorscheme gruvbox
-"colorscheme spacegray
-"colorscheme hybrid_reverse
+set bg=dark
+
+"colorscheme wal
+colorscheme gruvbox
 
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 

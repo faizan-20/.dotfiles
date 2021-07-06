@@ -12,8 +12,8 @@ window:
     y: 250
   
   padding:
-    x: 6
-    y: 6
+    x: 8
+    y: 8
 
   dynamic_padding: true
   decorations: full
@@ -61,7 +61,7 @@ colors:
   primary:
     # hard contrast: background = '0x1d2021' '0x282828'
     background: '0x1d2021'
-    # soft contrast: background = '0x32302f'
+    # soft contrast: background = '0x32302f' ebdbb2
     foreground: '0xebdbb2'
 
   # Normal colors

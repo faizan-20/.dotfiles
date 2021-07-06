@@ -6,8 +6,8 @@ export PATH="/home/faizan/.local/bin:$PATH"
 
 # Setting up Defaults
 export EDITOR='nvim'
-export TERMINAL="alacritty"
-export BROWSER='firefox'
+export TERMINAL="st"
+export BROWSER='chromium'
 export MANPAGER='nvim +Man!'
 export LANG='en_US.UTF-8'
 
@@ -40,10 +40,13 @@ alias ll='exa --group-directories-first'
 alias ls='exa -l --group-directories-first'
 alias la='exa -a --group-directories-first'
 alias al='exa -al --group-directories-first'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 alias wp='wpg -s ~/Wallpapers/Walls/ ; timeout 0.5s xsettingsd -c ~/.config/xsettingsd/xsettingsd.conf ; feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"'
 
 alias pac='sudo pacman'
+alias ref='sudo reflector --latest 20 --sort rate --save /et/pacman.d/mirrorlist'
 alias clup='pac -Rns $(pac -Qdtq)'
 
 alias rg='ranger'
@@ -67,13 +70,8 @@ bindkey '^[[B' history-substring-search-down
 eval "$(starship init zsh)"
 
 # Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
 (cat ~/.config/wpg/sequences &)
-
 # Alternative (blocks terminal for 0-3ms)
 #cat ~/.config/wpg/sequences &
-
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
