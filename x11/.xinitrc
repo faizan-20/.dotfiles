@@ -3,26 +3,29 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-xrdb ~/.Xresources 
+#xrdb ~/.Xresources 
 picom --experimental-backends &
 
 /usr/lib/xfce-polkit/xfce-polkit &
-#feh --bg-fill --randomize ~/Wallpapers/Walls
-feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"&
-wal -R
+#/usr/lib/budgie-polkit-dialog &
+feh --bg-fill --randomize ~/Wallpapers/Walls &
+#feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"&
+#wal -R
 
 dunst &
 nm-applet &
 blueman-applet &
-cbatticon &
+powerkit &
 #kdeconnect-indicator &
 #volumeicon &
 
-xidlehook --not-when-audio --not-when-fullscreen --timer 600 "i3lock-fancy" "" &
+#xidlehook --not-when-audio --not-when-fullscreen --timer 600 "i3lock-fancy" "" &
 
 dwmblocks &
 while type dwm >/dev/null ; do dwm && continue || break ; done
 
+#export XDG_CURRENT_DESKTOP=Budgie:GNOME
+#exec budgie-desktop
 exec dwm
-#exec awesome
 #exec i3
+#exec awesome
