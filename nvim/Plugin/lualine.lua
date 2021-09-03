@@ -158,7 +158,7 @@ ins_left {
 -- for lualine it's any number greater then 2
 ins_left {function() return '%=' end}
 
-ins_left {
+ins_right {
   -- Lsp server name .
   function()
     local msg = 'No Active Lsp'
