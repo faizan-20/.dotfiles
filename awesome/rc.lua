@@ -55,7 +55,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "st"
 editor = os.getenv("nvim") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -122,7 +122,7 @@ local cw = calendar_widget({
     theme = 'nord',
     placement = 'top_right'
 })
-mytextclock:connect_signal("button::press", 
+mytextclock:connect_signal("button::press",
     function(_, _, _, button)
         if button == 1 then cw.toggle() end
     end)
@@ -241,7 +241,7 @@ awful.screen.connect_for_each_screen(function(s)
           get_brightness_cmd = 'xbacklight -get',
           inc_brightness_cmd = 'xbacklight -inc 5',
           dec_brightness_cmd = 'xbacklight -dec 5'
-        }),   
+        }),
 			tbox_separator,
 			wibox.widget.systray(),
 			tbox_separator,
@@ -340,13 +340,13 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey },            "d",     function ()
-	awful.util.spawn("dmenu_run")      end,
+	awful.util.spawn("rofi -show drun")      end,
               {description = "run prompt", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "w", function()
 	awful.util.spawn("firefox") end,
 			  {description = 'Browser', group = "FZ"}),
-	-- feh 
+	-- feh
 	awful.key({ modkey, "Shift" }, "w", function()
 	awful.util.spawn("feh --bg-fill --randomize ~/Wallpapers/Walls/") end,
 			  {description = 'Walpapper', group = "FZ"}),
@@ -356,13 +356,13 @@ globalkeys = gears.table.join(
 			  {description = "File Manager", group = "FZ"}),
 	-- ranger FM
 			  awful.key({modkey}, "r", function()
-	awful.util.spawn("alacritty -e ranger") end,
+	awful.util.spawn("st -e ranger") end,
 			  {description = "File Manager", group = "FZ"}),
-	
+
 	--screesnshot
 	awful.key({}, "Print", function()
 	awful.util.spawn("xfce4-screenshooter") end,
-			  {description = "screesnshot", group = "FZ"}),	
+			  {description = "screesnshot", group = "FZ"}),
 	--lock
     awful.key({modkey, "Shift" }, "x", function()
     awful.util.spawn("betterlockscreen -l dim") end,
@@ -371,7 +371,7 @@ globalkeys = gears.table.join(
     awful.key({modkey, "Control" }, "p", function()
     awful.util.spawn("picom --experimental-backends") end,
     	      {description = "spawn picom", group = "FZ"}),
-    
+
 	awful.key({modkey, "Shift" }, "p", function()
     awful.util.spawn("killall picom") end,
     	      {description = "kill picom", group = "FZ"}),
@@ -589,7 +589,7 @@ awful.rules.rules = {
 	{ rule = { class = "firefox"},
 		properties = { tag = "2"}	},
    }
-	
+
 -- }}}
 
 -- {{{ Signals
@@ -630,7 +630,7 @@ beautiful.useless_gap = 5
 
 
 -- _____    ____   ___
---|  ___|  |___ \ / _ \  
+--|  ___|  |___ \ / _ \
 --| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
 --|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
 --|_|      |_____|\___/

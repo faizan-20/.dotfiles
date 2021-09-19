@@ -41,7 +41,7 @@ entry {
 }
 
 listview {
-  cycle: false;
+  cycle: true;
   margin: 0 0 -1px 0;
   scrollbar: false;
 }
