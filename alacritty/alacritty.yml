@@ -23,7 +23,7 @@ scrolling:
   multiplier: 3
 
 
-background_opacity: 0.95
+background_opacity: 0.90
 window.dynami_title: true
 
 font:
