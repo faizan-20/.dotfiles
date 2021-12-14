@@ -46,12 +46,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = JetBrainsMono Nerd Font:size=10;0
+font-0 = NotoSansMono Nerd Font:size=10;0
 
 modules-left = bspwm i3
-modules-center = date 
+modules-center = date
 ;spotify
-modules-right = xbacklight pulseaudio memory eth battery 
+modules-right = xbacklight pulseaudio memory eth battery
 
 tray-position = right
 tray-padding = 2
@@ -255,7 +255,7 @@ type = internal/date
 interval = 5
 
 date = %a, %b %d -
-time = %l:%M 
+time = %l:%M
 
 format-prefix = " : "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -339,14 +339,14 @@ ramp-capacity-2 =  :
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 =  :
-#animation-charging-1 =  : 
-#animation-charging-2 =  : 
+#animation-charging-1 =  :
+#animation-charging-2 =  :
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 =   : 
-#animation-discharging-1 = 
-#animation-discharging-2 = 
+animation-discharging-0 =   :
+#animation-discharging-1 =
+#animation-discharging-2 =
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -392,7 +392,7 @@ margin-bottom = 5
 ; vim:ft=dosini
 
 ; _____    ____   ___
-;|  ___|  |___ \ / _ \  
+;|  ___|  |___ \ / _ \
 ;| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
 ;|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
 ;|_|      |_____|\___/

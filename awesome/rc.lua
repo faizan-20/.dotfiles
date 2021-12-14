@@ -340,7 +340,7 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey },            "d",     function ()
-	awful.util.spawn("rofi -show drun")      end,
+	awful.util.spawn("dmenu_run")      end,
               {description = "run prompt", group = "launcher"}),
 	-- Firefox
 	awful.key({ modkey }, "w", function()
@@ -352,7 +352,7 @@ globalkeys = gears.table.join(
 			  {description = 'Walpapper', group = "FZ"}),
 	-- File Manager
 	awful.key({modkey}, "e", function()
-	awful.util.spawn("pcmanfm") end,
+	awful.util.spawn("dolphin") end,
 			  {description = "File Manager", group = "FZ"}),
 	-- ranger FM
 			  awful.key({modkey}, "r", function()

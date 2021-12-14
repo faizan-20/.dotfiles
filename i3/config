@@ -1,8 +1,9 @@
 # Modkey
 set $mod Mod4
 
+
 # Font
-font pango: JetBrainsMono Nerd Font 10
+font pango: NotoSansMono Nerd Font 10
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -15,7 +16,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -178,28 +179,28 @@ bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
 
 #key bindings
-bindsym $mod+Shift+f exec pcmanfm 
-bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
+bindsym $mod+Shift+f exec pcmanfm
+bindsym $mod+Shift+x exec --no-startup-id i3lock-fancy
 bindsym $mod+shift+s exec systemctl suspend
-bindsym $mod+w exec firefox 
+bindsym $mod+w exec firefox
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-bindsym Print exec xfce4-screenshooter 
+bindsym Print exec xfce4-screenshooter
 bindsym $mod+Shift+w exec feh --bg-fill --randomize ~/Wallpapers/Walls
 bindsym $mod+shift+p exec killall picom
 bindsym $mod+p exec picom --experimental-backends
 
 # Autostart
-exec_always --no-startup-id picom --experimental-backends
-exec_always --no-startup-id feh --bg-fill --randomize ~/Wallpapers/Walls
+#exec_always --no-startup-id picom --experimental-backends
+#exec_always --no-startup-id feh --bg-fill --randomize ~/Wallpapers/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id autotiling
-exec_always --no-startup-id dunst
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id xss-lock betterlockscreen -l dim 
-exec_always --no-startup-id kdeconnect-indicator 
-exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+#exec_always --no-startup-id blueman-applet
+#exec_always --no-startup-id autotiling
+#exec_always --no-startup-id dunst
+#exec_always --no-startup-id nm-applet
+#exec_always --no-startup-id xss-lock i3lock-fancy
+#exec_always --no-startup-id kdeconnect-indicator
+#exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 
 new_window 1pixel
@@ -220,14 +221,14 @@ gaps outer -2
 # Smart gaps (gaps used if only more than one container on the workspace)
 #smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 #smart_borders on
 
-# Press $mod+Shift+g to enter the gap mode. 
+# Press $mod+Shift+g to enter the gap mode.
 # Choose o or i for modifying outer/inner gaps.
-# Press one of + / - (in-/decrement for current workspace) 
-# or 0 (remove gaps for current workspace). If you also press Shift 
+# Press one of + / - (in-/decrement for current workspace)
+# or 0 (remove gaps for current workspace). If you also press Shift
 # with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -266,7 +267,7 @@ mode "$mode_gaps_outer" {
 }
 
 # _____    ____   ___
-#|  ___|  |___ \ / _ \  
+#|  ___|  |___ \ / _ \
 #| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
 #|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
 #|_|      |_____|\___/
