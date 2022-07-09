@@ -1,4 +1,4 @@
-"---------------------------------mapleader----------------------------
+"---------------------------------mapleader----------------------------ini
 let mapleader = " "
 "------------------------------------ Plugin --------------------------
 call plug#begin('~/.vim/plugged')
@@ -19,8 +19,9 @@ call plug#begin('~/.vim/plugged')
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Additional lsp
+    Plug 'mfussenegger/nvim-jdtls'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'mattn/emmet-vim'
+    "Plug 'mattn/emmet-vim'
 
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
@@ -99,6 +100,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+nmap <C-e> <Cmd>NvimTreeToggle<CR>
 "-------------------------- Auto command ------------------------------
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -123,12 +125,13 @@ source ~/.config/nvim/Plugin/color-config.vim
 "-- lsp-config
 source ~/.config/nvim/Plugin/lsp.lua
 source ~/.config/nvim/Plugin/nvim-cmp.lua
+"source ~/.config/nvim/Plugin/java.lua
 "source ~/.config/nvim/coc.vim
 
 "-- others
 source ~/.config/nvim/Plugin/treesitter.lua
 source ~/.config/nvim/Plugin/lualine.lua
-source ~/.config/nvim/Plugin/nvim-tree.vim
+source ~/.config/nvim/Plugin/nvim-tree.lua
 "-------------------------- The End -----------------------------------
 
 "_____    ____   ___

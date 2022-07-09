@@ -55,7 +55,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "st"
+terminal = "alacritty"
 editor = os.getenv("nvim") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -620,11 +620,11 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 
 -- Autostart
---awful.spawn.with_shell("feh --bg-fill --randomize ~/Wallpapers/Walls/")
---awful.spawn.with_shell("picom --experimental-backends")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Pictures/Wallpapers/Walls")
+awful.spawn.with_shell("picom --experimental-backends")
 --awful.spawn.with_shell('nm-applet')
 --awful.spawn.with_shell('blueman-applet')
---awful.spawn.with_shell('dunst')
+awful.spawn.with_shell('dunst')
 --awful.spawn.with_shell('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
 --awful.spawn.with_shell('xss-lock -n dim-screen.sh -- betterlockscreen -l dim -n')
 

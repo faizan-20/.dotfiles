@@ -1,3 +1,1 @@
-configuration {
-	theme: "~/.config/rofi/themes/slate.rasi";
-}
+@theme "~/.config/rofi/themes/slate.rasi"

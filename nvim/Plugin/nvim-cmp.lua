@@ -4,7 +4,7 @@ vim.o.completeopt = 'menuone,noselect'
 -- luasnip setup
 local luasnip = require 'luasnip'
 
-local lspkind = require('lspkind')
+--local lspkind = require('lspkind')
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -48,15 +48,16 @@ cmp.setup {
     { name = 'buffer'},
     { name = 'path'}
   },
-  formatting = {
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-},
-
 require('lspkind').init({
-    -- enables text annotations
+    -- DEPRECATED (use mode instead): enables text annotations
     --
     -- default: true
-    with_text = true,
+    -- with_text = true,
+
+    -- defines how annotations are shown
+    -- default: symbol
+    -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+    mode = 'symbol',
 
     -- default symbol map
     -- can be either 'default' (requires nerd-fonts font) or

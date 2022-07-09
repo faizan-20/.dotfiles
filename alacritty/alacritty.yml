@@ -17,14 +17,12 @@ window:
 
   dynamic_padding: false
   decorations: full
+  opacity: 0.8
+  dynami_title: true
 
 scrolling:
   history: 10000
   multiplier: 3
-
-
-background_opacity: 1.00
-window.dynami_title: true
 
 font:
   normal:
