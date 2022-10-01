@@ -3,24 +3,23 @@ let mapleader = " "
 "------------------------------------ Plugin --------------------------
 call plug#begin('~/.vim/plugged')
     " LSP
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'hrsh7th/cmp-cmdline'
-
-    Plug 'L3MON4D3/LuaSnip'
-    Plug 'onsails/lspkind-nvim'
+"    Plug 'neovim/nvim-lspconfig'
+"    Plug 'hrsh7th/cmp-nvim-lsp'
+"    Plug 'hrsh7th/cmp-buffer'
+"    Plug 'hrsh7th/nvim-cmp'
+"    Plug 'hrsh7th/cmp-path'
+"    Plug 'onsails/lspkind-nvim'
+"    Plug 'onsails/lspkind-nvim'
+"    Plug 'saadparwaiz1/cmp_luasnip'
+"
+"    Plug 'L3MON4D3/LuaSnip'
+"    Plug 'glepnir/lspsaga.nvim'
 
     " To use coc disable(comment out) LSP plugins first
-    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Additional lsp
-    Plug 'mfussenegger/nvim-jdtls'
-    Plug 'jiangmiao/auto-pairs'
+    "Plug 'jiangmiao/auto-pairs'
     "Plug 'mattn/emmet-vim'
 
     " Telescope
@@ -30,7 +29,7 @@ call plug#begin('~/.vim/plugged')
     " Useless Features
     Plug 'hoob3rt/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
+    "Plug 'kyazdani42/nvim-tree.lua'
     Plug 'romgrk/barbar.nvim'
     Plug 'Yggdroot/indentLine'
 
@@ -60,7 +59,8 @@ set shiftwidth=4 tabstop=4 softtabstop=4 expandtab smarttab
 set cursorline
 set laststatus=2
 set hidden
-set nu rnu
+set ignorecase
+set nu
 set incsearch
 set nohlsearch
 set nowrap
@@ -99,8 +99,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-nmap <C-e> <Cmd>NvimTreeToggle<CR>
 "-------------------------- Auto command ------------------------------
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -123,15 +121,14 @@ augroup END
 source ~/.config/nvim/Plugin/color-config.vim
 
 "-- lsp-config
-source ~/.config/nvim/Plugin/lsp.lua
-source ~/.config/nvim/Plugin/nvim-cmp.lua
-"source ~/.config/nvim/Plugin/java.lua
-"source ~/.config/nvim/coc.vim
+"source ~/.config/nvim/Plugin/lsp.lua
+"source ~/.config/nvim/Plugin/nvim-cmp.lua
+source ~/.config/nvim/coc.vim
 
 "-- others
 source ~/.config/nvim/Plugin/treesitter.lua
 source ~/.config/nvim/Plugin/lualine.lua
-source ~/.config/nvim/Plugin/nvim-tree.lua
+"source ~/.config/nvim/Plugin/nvim-tree.lua
 "-------------------------- The End -----------------------------------
 
 "_____    ____   ___
@@ -140,3 +137,4 @@ source ~/.config/nvim/Plugin/nvim-tree.lua
 "|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
 "|_|      |_____|\___/
 
+"source ~/.config/nvim/lua/faizan/lsp.lua
