@@ -1,26 +1,30 @@
-# Use powerline
-USE_POWERLINE="false"
-export PATH=~/.local/.bin/:$PATH
-export PATH=~/.local/.bin/statusbar/:$PATH
-export PATH=~/.local/.bin/scripts/:$PATH
 
-export PATH=$HOME/dev/flutter/bin:$PATH
-#export PATH=$HOME/dev/android-studio/bin:$PATH
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-# Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
-# Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+zstyle ':completion:*' max-errors 3
+zstyle :compinstall filename '/home/faizan/.zshrc'
+# History in cache directory:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.cache/zsh/history
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+eval "$(starship init zsh)"
+#PATH=$HOME/.local/.bin/statusbar:$PATH
 
 # Alias
 alias pac='sudo pacman'
-alias ls='exa -l --icons --group-directories-first'
 alias v='nvim'
 alias sudo='sudo '
+alias ls='exa -l'
+alias orphan='pacman -Qtdq | pacman -Rns -'
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 fortune -s

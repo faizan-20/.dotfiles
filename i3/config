@@ -191,16 +191,16 @@ bindsym $mod+shift+p exec killall picom
 bindsym $mod+p exec picom --experimental-backends
 
 # Autostart
-#exec_always --no-startup-id picom --experimental-backends
-#exec_always --no-startup-id feh --bg-fill --randomize ~/Wallpapers/Walls
+exec_always --no-startup-id picom --experimental-backends
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/Walls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id blueman-applet
 #exec_always --no-startup-id autotiling
-#exec_always --no-startup-id dunst
-#exec_always --no-startup-id nm-applet
+exec_always --no-startup-id dunst
+exec_always --no-startup-id nm-applet
 #exec_always --no-startup-id xss-lock i3lock-fancy
 #exec_always --no-startup-id kdeconnect-indicator
-#exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 
 new_window 1pixel

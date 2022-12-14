@@ -1,2 +1,4 @@
 export QT_QPA_PLATFORMTHEME=qt5ct
-xset -b
+PATH=$HOME/.local/.bin/statusbar:$PATH
+PATH=$HOME/.local/.bin/executables:$PATH
+export PATH="/home/faizan/.local/bin:$PATH"

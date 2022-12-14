@@ -84,105 +84,70 @@ draw_bold_text_with_bright_colors: true
 #    cyan:    '0x8ec07c'
 #    white:   '0xebdbb2'
 
-############################################################# Colors (sonokai default) ##############################################
-#colors:
-#  primary:
-#    background: "0x2c2e34" ##242424
-#    foreground: "0xe2e2e3"
-#
-#  normal:
-#    black: "0x181819"
-#    red: "0xfc5d7c"
-#    green: "0x9ed072"
-#    yellow: "0xe7c664"
-#    blue: "0x76cce0"
-#    magenta: "0xb39df3"
-#    cyan: "0xf39660"
-#    white: "0xe2e2e3"
-#
-#  bright:
-#    black: "0x928374" ##928374
-#    red: "0xfc5d7c"
-#    green: "0x9ed072"
-#    yellow: "0xe7c664"
-#    blue: "0x76cce0"
-#    magenta: "0xb39df3"
-#    cyan: "0xf39660"
-#    white: "0xe2e2e3"
-
-############################################################# Colors (uwu) ##############################################
+############################################################# Colors (ayu) ##############################################
+# Colors (Ayu Dark)
 #colors:
 #  # Default colors
 #  primary:
-#    background: '0x131A1C'
-#    foreground: '0xC5C8C9'
-#
-#  # Colors the cursor will use if `custom_cursor_colors` is true
-#  cursor:
-#    text: '0xd6d6d6'
-#    cursor: '0x232a2c'
+#    background: '0x0f1419'
+#    foreground: '0xe6e1cf'
 #
 #  # Normal colors
 #  normal:
-#    black:   '0x1b2224'
-#    red:     '0xe74c4c'
-#    green:   '0x6bb05d'
-#    yellow:  '0xe59e67'
-#    blue:    '0x53A7BF'
-#    magenta: '0xef7cbb'
-#    cyan:    '0x51a39f'
-#    white:   '0xc4c4c4'
+#    black:   '0x000000'
+#    red:     '0xf34a4a'
+#    green:   '0xbae67e'
+#    yellow:  '0xffee99'
+#    blue:    '0x73d0ff'
+#    magenta: '0xd4bfff'
+#    cyan:    '0x83CEC6'
+#    white:   '0xf2f2f2'
 #
 #  # Bright colors
 #  bright:
-#    black:   '0x928374' ##232a2c
-#    red:     '0xc26f6f'
-#    green:   '0x8dc776'
-#    yellow:  '0xe7ac7e'
-#    blue:    '0x6CBAD1'
-#    magenta: '0xd3869b'
-#    cyan:    '0x6db0ad'
-#    white:   '0xbfbfbf'
-#
-#  dim:
-#    black:   '0x000000'
-#    red:     '0x8c3336'
-#    green:   '0x7a8530'
-#    yellow:  '0x97822e'
-#    blue:    '0x506d8f'
-#    magenta: '0x80638e'
-#    cyan:    '0x497e7a'
-#    white:   '0x9a9a9a'
+#    black:   '0x737d87'
+#    red:     '0xff3333'
+#    green:   '0xc2d94c'
+#    yellow:  '0xe7c547'
+#    blue:    '0x59c2ff'
+#    magenta: '0xb77ee0'
+#    cyan:    '0x5ccfe6'
+#    white:   '0xffffff'
 
-############################################################# Colors (ayu) ##############################################
-# Colors (Ayu Dark)
+############################################################# tokyonight ##############################################
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x0f1419'
-    foreground: '0xe6e1cf'
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xf34a4a'
-    green:   '0xbae67e'
-    yellow:  '0xffee99'
-    blue:    '0x73d0ff'
-    magenta: '0xd4bfff'
-    cyan:    '0x83CEC6'
-    white:   '0xf2f2f2'
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black:   '0x737d87'
-    red:     '0xff3333'
-    green:   '0xc2d94c'
-    yellow:  '0xe7c547'
-    blue:    '0x59c2ff'
-    magenta: '0xb77ee0'
-    cyan:    '0x5ccfe6'
-    white:   '0xffffff'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+
 
 cursor:
   style: Block
