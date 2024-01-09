@@ -12,12 +12,12 @@ window:
     y: 250
 
   padding:
-    x: 8
-    y: 8
+    x: 12
+    y: 12
 
   dynamic_padding: false
   decorations: full
-  opacity: 0.95
+  opacity: 1
   dynami_title: true
 
 scrolling:
@@ -41,7 +41,7 @@ font:
       family: Hack Nerd Font
       style: Bold Italic
 
-  size: 10
+  size: 12
 
   offset:
     x: 0
@@ -53,101 +53,119 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-############################################################# Colors (Gruvbox dark) ##############################################
-#colors:
-#  # Default colors
-#  primary:
-#    # hard contrast: background = '0x1d2021' '0x282828'
-#    background: '0x1d2021'
-#    # soft contrast: background = '0x32302f' ebdbb2
-#    foreground: '0xebdbb2'
-#
-#  # Normal colors
-#  normal:
-#    black:   '0x282828'
-#    red:     '0xcc241d'
-#    green:   '0x98971a'
-#    yellow:  '0xd79921'
-#    blue:    '0x458588'
-#    magenta: '0xb16286'
-#    cyan:    '0x689d6a'
-#    white:   '0xa89984'
-#
-#  # Bright colors
-#  bright:
-#    black:   '0x928374'
-#    red:     '0xfb4934'
-#    green:   '0xb8bb26'
-#    yellow:  '0xfabd2f'
-#    blue:    '0x83a598'
-#    magenta: '0xd3869b'
-#    cyan:    '0x8ec07c'
-#    white:   '0xebdbb2'
-
-############################################################# Colors (ayu) ##############################################
-# Colors (Ayu Dark)
-#colors:
-#  # Default colors
-#  primary:
-#    background: '0x0f1419'
-#    foreground: '0xe6e1cf'
-#
-#  # Normal colors
-#  normal:
-#    black:   '0x000000'
-#    red:     '0xf34a4a'
-#    green:   '0xbae67e'
-#    yellow:  '0xffee99'
-#    blue:    '0x73d0ff'
-#    magenta: '0xd4bfff'
-#    cyan:    '0x83CEC6'
-#    white:   '0xf2f2f2'
-#
-#  # Bright colors
-#  bright:
-#    black:   '0x737d87'
-#    red:     '0xff3333'
-#    green:   '0xc2d94c'
-#    yellow:  '0xe7c547'
-#    blue:    '0x59c2ff'
-#    magenta: '0xb77ee0'
-#    cyan:    '0x5ccfe6'
-#    white:   '0xffffff'
-
 ############################################################# tokyonight ##############################################
-# TokyoNight Alacritty Colors
+## TokyoNight Alacritty Colors
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x1a1b26'
+#    foreground: '0xc0caf5'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x15161e'
+#    red:     '0xf7768e'
+#    green:   '0x9ece6a'
+#    yellow:  '0xe0af68'
+#    blue:    '0x7aa2f7'
+#    magenta: '0xbb9af7'
+#    cyan:    '0x7dcfff'
+#    white:   '0xa9b1d6'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x414868'
+#    red:     '0xf7768e'
+#    green:   '0x9ece6a'
+#    yellow:  '0xe0af68'
+#    blue:    '0x7aa2f7'
+#    magenta: '0xbb9af7'
+#    cyan:    '0x7dcfff'
+#    white:   '0xc0caf5'
+#
+#  indexed_colors:
+#    - { index: 16, color: '0xff9e64' }
+#    - { index: 17, color: '0xdb4b4b' }
+
+
 colors:
-  # Default colors
-  primary:
-    background: '0x1a1b26'
-    foreground: '0xc0caf5'
+    primary:
+        background: "#1E1E2E" # base
+        foreground: "#CDD6F4" # text
+        # Bright and dim foreground colors
+        dim_foreground: "#CDD6F4" # text
+        bright_foreground: "#CDD6F4" # text
 
-  # Normal colors
-  normal:
-    black:   '0x15161e'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
+    # Cursor colors
+    cursor:
+        text: "#1E1E2E" # base
+        cursor: "#F5E0DC" # rosewater
+    vi_mode_cursor:
+        text: "#1E1E2E" # base
+        cursor: "#B4BEFE" # lavender
 
-  # Bright colors
-  bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
+    # Search colors
+    search:
+        matches:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
+        focused_match:
+            foreground: "#1E1E2E" # base
+            background: "#A6E3A1" # green
+        footer_bar:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
 
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#1E1E2E" # base
+            background: "#F9E2AF" # yellow
+        end:
+            foreground: "#1E1E2E" # base
+            background: "#A6ADC8" # subtext0
 
+    # Selection colors
+    selection:
+        text: "#1E1E2E" # base
+        background: "#F5E0DC" # rosewater
+
+    # Normal colors
+    normal:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
+
+    # Bright colors
+    bright:
+        black: "#585B70" # surface2
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#A6ADC8" # subtext0
+
+    # Dim colors
+    dim:
+        black: "#45475A" # surface1
+        red: "#F38BA8" # red
+        green: "#A6E3A1" # green
+        yellow: "#F9E2AF" # yellow
+        blue: "#89B4FA" # blue
+        magenta: "#F5C2E7" # pink
+        cyan: "#94E2D5" # teal
+        white: "#BAC2DE" # subtext1
+
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }
 
 cursor:
   style: Block
@@ -157,3 +175,4 @@ cursor:
 #| |_ _____ __| | | | | ////////////faizan-20\\\\\\\\\\\\\
 #|  _|_____/ __/| |_| | git - https://github.com/faizan-20/
 #|_|      |_____|\___/
+
