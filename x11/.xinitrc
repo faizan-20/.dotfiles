@@ -1,14 +1,14 @@
-!/bin/sh
+!#/bin/sh
 export QT_QPA_PLATFORMTHEME=qt5ct
 export SSH_AUTH_SOCK
+export $(dbus-launch)
 
 xrdb -merge ~/.Xresources &
-picom --experimental-backends &
+picom &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #/usr/lib/polkit-kde-authentication-agent-1 &
-#feh --bg-fill --randomize ~/Pictures/Wallpapers/Walls &
-wal -R
+feh --bg-fill --randomize ~/Pictures/Wallpapers &
 
 dunst &
 nm-applet &
