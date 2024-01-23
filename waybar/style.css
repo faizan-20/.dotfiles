@@ -1,13 +1,14 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: "SF Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 window#waybar {
-  background-color: rgba(9, 9, 11, 0.4);
+  background-color: rgba(24, 24, 37, 0.4);
   /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-  color: #ffffff;
+  border-bottom: 2px solid rgba(24, 24, 37, 0.4);
+  color: #cdd6f4;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -60,13 +61,13 @@ button:hover {
 
 #workspaces button.active {
   /* color: #6366f1; */
-  background-color: rgba(7, 89, 133, 0.1);
-  border-top: 2px solid #075985;
+  background-color: rgba(137, 180, 250, 0.1);
+  border-top: 2px solid #89b4fa;
 }
 
 #workspaces button.urgent {
-  background-color: rgba(153, 27, 27, 0.1);
-  border-top: 2px solid #991b1b;
+  background-color: rgba(243, 139, 168, 0.1);
+  border-top: 2px solid #f38ba8;
 }
 
 #clock,
@@ -86,7 +87,29 @@ button:hover {
 #scratchpad,
 #mpd {
   padding: 0 10px;
-  color: #ffffff;
+  /* color: #ffffff; */
+}
+
+#clock {
+  color: #f2cdcd;
+}
+#battery {
+  color: #74c7ec;
+}
+#backlight {
+  color: #cba6f7;
+}
+#memory {
+  color: #fab387;
+}
+#network {
+  color: #a6e3a1;
+}
+#wireplumber {
+  color: #94e2d5;
+}
+#idle_inhibitor {
+  color: #b4befe;
 }
 
 #window,
@@ -96,7 +119,7 @@ button:hover {
 
 #window {
   background-color: rgba(148, 163, 184, 0.1);
-  padding: 0px 10px;
+  padding: 0px 5px;
   border-radius: 10px;
   font-weight: 800;
 }
@@ -171,7 +194,6 @@ label:focus {
 }
 
 #wireplumber.muted {
-  background-color: #f53c3c;
   color: #f53c3c;
 }
 
