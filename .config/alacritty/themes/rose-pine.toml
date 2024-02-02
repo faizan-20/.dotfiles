@@ -8,8 +8,8 @@ dim_foreground = "#908caa"
 bright_foreground = "#e0def4"
 
 [colors.cursor]
-text = "#e0def4"
-cursor = "#524f67"
+text = "#c9c6ec"
+cursor = "#817d9b"
 
 [colors.vi_mode_cursor]
 text = "#e0def4"

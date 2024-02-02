@@ -1,16 +1,1 @@
-# Ignore everythin
-* 
-
-# Except
-!.bin/statusbar
-!alacritty/
-!dunst/
-!hypr/
-!ranger/
-!waybar/
-!x11/
-!zsh/
-!.tmux.conf
-!Readme.md 
-!starship.toml
-!.gitignore
+./.config/tmux/plugins/

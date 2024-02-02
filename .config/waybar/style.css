@@ -1,0 +1,159 @@
+@import "./rose-pine.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0);
+  color: @text;
+}
+
+tooltip {
+  background: @base;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @overlay;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: @highlightMed;
+  margin-right: 5px;
+}
+
+#workspaces button.active {
+  color: @text;
+}
+
+#workspaces button.focused {
+  color: @subtle;
+  background: @love;
+  border-radius: 8px;
+}
+
+#workspaces button.urgent {
+  color: @base;
+  background: @pine;
+  border-radius: 8px;
+}
+
+#workspaces button:hover {
+  background: @highlightLow;
+  color: @text;
+  border-radius: 8px;
+}
+
+#custom-power_profile,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#temperature,
+#workspaces,
+#tray,
+#memory,
+#backlight {
+  background: @base;
+  opacity: 0.9;
+  padding: 0px 10px;
+  margin: 0px 0px;
+  margin-top: 5px;
+  border: 2px solid @pine;
+}
+
+#memory {
+  color: #3e8fb0;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#temperature {
+  color: @gold;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#temperature.critical {
+  border-left: 0px;
+  border-right: 0px;
+  color: @love;
+}
+
+#backlight {
+  color: @text;
+  border-radius: 0px 8px 8px 0px;
+  margin-right: 10px;
+}
+
+#tray {
+  border-radius: 8px;
+  margin-left: 0px;
+  margin-right: 20px;
+}
+
+#workspaces {
+  background: @base;
+  border-radius: 8px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+#custom-power_profile {
+  color: @foam;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#window {
+  border-radius: 8px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+window#waybar.empty {
+  background-color: transparent;
+}
+
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  /*  background-color: rgba(66,66,66,0.5); */ /* transparent */
+  background-color: transparent;
+}
+
+#clock {
+  color: @text;
+  background: @pine;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+#network {
+  color: @love;
+  border-radius: 8px 0px 0px 8px;
+  border-right: 0px;
+}
+
+#pulseaudio {
+  color: @iris;
+  border-radius: 8px 0px 0px 8px;
+  border-right: 0px;
+}
+
+#battery {
+  color: @foam;
+  border-radius: 0 8px 8px 0;
+  margin-right: 10px;
+  border-left: 0px;
+}
