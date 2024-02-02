@@ -1,8 +1,8 @@
 window {
   margin: 0px;
   background-color: #191724;
-  border-radius: 0px;
-  border: 2px solid #eb6f92;
+  border-radius: 8px;
+  border: 2px solid #c4a7e7;
   color: #e0def4;
   font-family: "SF mono";
   font-size: 14px;
@@ -10,10 +10,10 @@ window {
 
 #input {
   margin: 5px;
-  border-radius: 0px;
+  border-radius: 8px;
   border: none;
-  border-radius: 0px;
-  color: #eb6f92;
+  border-radius: 8px;
+  color: #e0def4;
   background-color: #26233a;
 }
 
@@ -43,15 +43,15 @@ window {
 }
 
 #entry:selected {
-  background-color: #eb6f92;
+  background-color: #c4a7e7;
   color: #191724;
-  border-radius: 0px;
+  border-radius: 8px;
   outline: none;
 }
 
 #entry:selected * {
-  background-color: #eb6f92;
+  background-color: #c4a7e7;
   color: #191724;
-  border-radius: 0px;
+  border-radius: 8px;
   outline: none;
 }
