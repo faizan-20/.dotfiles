@@ -29,9 +29,10 @@ return {
 					"vimdoc",
 					"yaml",
 				},
+				auto_install = true,
 				highlight = { enable = true },
 				indent = { enable = true },
-				autotag = { enable = true },
+				autotag = { enable = true }, -- requires nvim-ts-autotag plugin to work
 			})
 		end,
 	},

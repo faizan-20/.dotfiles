@@ -19,8 +19,7 @@ return {
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
 		local formatting = null_ls.builtins.formatting -- to setup formatters
-		local diagnostics = null_ls.builtins.diagnostics -- to setup linters
-		local completion = null_ls.builtins.completion
+		-- local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 		-- to setup format on save
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -32,12 +31,6 @@ return {
 			sources = {
 				formatting.stylua,
 				formatting.prettier,
-				-- diagnostics.eslint.with({
-				-- 	condition = function(utils)
-				-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-				-- 	end,
-				-- }),
-				completion.luasnip,
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)
