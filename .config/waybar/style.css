@@ -3,7 +3,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "Hack Nerd Font";
   font-weight: bold;
   font-size: 14px;
   min-height: 0;
@@ -51,6 +51,7 @@ tooltip {
 }
 
 #custom-power_profile,
+#idle_inhibitor,
 #window,
 #clock,
 #battery,
@@ -143,6 +144,11 @@ window#waybar.empty #window {
   color: @love;
   border-radius: 8px 0px 0px 8px;
   border-right: 0px;
+  margin-left: 10px;
+}
+
+#idle_inhibitor {
+  border-radius: 8px;
 }
 
 #pulseaudio {
