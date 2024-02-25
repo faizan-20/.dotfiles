@@ -30,8 +30,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("i", "jk", "<esc>")
 vim.keymap.set("i", "kj", "<esc>")
 
-vim.keymap.set("n", "<Tab>", ":bnext<CR>")
-vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
 vim.keymap.set("n", "<leader>q", ":bdelete<CR>")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
