@@ -24,30 +24,30 @@ tooltip {
 
 #workspaces button {
   padding: 5px;
-  color: @highlightMed;
+  color: @muted;
   margin-right: 5px;
 }
 
 #workspaces button.active {
-  color: @text;
+  color: @iris;
 }
 
 #workspaces button.focused {
   color: @subtle;
   background: @love;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 #workspaces button.urgent {
   color: @base;
   background: @pine;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 #workspaces button:hover {
   background: @highlightLow;
-  color: @text;
-  border-radius: 8px;
+  color: @iris;
+  border-radius: 10px;
 }
 
 #custom-power_profile,
@@ -68,17 +68,17 @@ tooltip {
   padding: 0px 10px;
   margin: 0px 0px;
   margin-top: 5px;
-  border: 2px solid @pine;
+  border: 1px solid #26233a;
 }
 
 #memory {
-  color: #3e8fb0;
+  color: @pine;
   border-left: 0px;
   border-right: 0px;
 }
 
 #temperature {
-  color: @gold;
+  color: @iris;
   border-left: 0px;
   border-right: 0px;
 }
@@ -90,20 +90,20 @@ tooltip {
 }
 
 #backlight {
-  color: @text;
-  border-radius: 0px 8px 8px 0px;
+  color: @iris;
+  border-radius: 0px 10px 10px 0px;
   margin-right: 10px;
 }
 
 #tray {
-  border-radius: 8px;
+  border-radius: 10px;
   margin-left: 0px;
   margin-right: 20px;
 }
 
 #workspaces {
   background: @base;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-left: 10px;
   padding-right: 0px;
   padding-left: 5px;
@@ -116,7 +116,7 @@ tooltip {
 }
 
 #window {
-  border-radius: 8px;
+  border-radius: 10px;
   margin-left: 60px;
   margin-right: 60px;
 }
@@ -134,32 +134,34 @@ window#waybar.empty #window {
 }
 
 #clock {
-  color: @text;
-  background: @pine;
-  border-radius: 8px;
+  color: @foam;
+  background: @highlightLow;
+  border-radius: 10px;
   margin-left: 20px;
+  border: none;
 }
 
 #network {
   color: @love;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 10px 0px 0px 10px;
   border-right: 0px;
   margin-left: 10px;
 }
 
 #idle_inhibitor {
-  border-radius: 8px;
+  border-radius: 10px;
+  padding-right: 15px;
 }
 
 #pulseaudio {
   color: @iris;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 10px 0px 0px 10px;
   border-right: 0px;
 }
 
 #battery {
   color: @foam;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;
 }

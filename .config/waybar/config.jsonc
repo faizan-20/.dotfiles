@@ -5,7 +5,7 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 30,
+  "height": 40,
   // "spacing": 4,
   "modules-left": ["clock", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
@@ -38,18 +38,18 @@
     "all-outputs": true,
     "on-click": "activate",
     "format": "{icon}",
-    // "format-icons": {
-    //   "1": "いち",
-    //   "2": "に",
-    //   "3": "さん",
-    //   "4": "よん",
-    //   "5": "ご",
-    //   "6": "ろく",
-    //   "7": "なな",
-    //   "8": "はち",
-    //   "9": "きゅう",
-    //   "10": "じゅう",
-    // },
+    "format-icons": {
+      "1": "いち",
+      "2": "に",
+      "3": "さん",
+      "4": "よん",
+      "5": "ご",
+      "6": "ろく",
+      "7": "なな",
+      "8": "はち",
+      "9": "きゅう",
+      "10": "じゅう",
+    },
   },
 
   "tray": {
@@ -58,17 +58,15 @@
   },
 
   "clock": {
-    "format": "{:%I:%M %p   %a, %b %e}",
+    "format": "󰥔 {:%I:%M %p  %a, %b %e}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "interval": 60,
   },
 
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon} {percent}",
+    "format": "{icon}  {percent}",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
-    // "on-click": "~/.config/waybar/scripts/cycleWall.sh",
-    // "on-click-right": "~/.config/rofi/bin/selectBG",
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
     "min-length": 6,
@@ -88,7 +86,7 @@
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}",
+    "format": "{icon}  {volume}",
     "tooltip": true,
     "format-muted": " ミュート",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
@@ -126,7 +124,7 @@
 
   "memory": {
     "interval": 30,
-    "format": " {}%",
+    "format": "  {}%",
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}GB used",
@@ -135,7 +133,7 @@
 
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": " {signalStrength}%",
+    "format-wifi": "  {signalStrength}%",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
