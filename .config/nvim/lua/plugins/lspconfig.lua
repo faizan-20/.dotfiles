@@ -9,6 +9,9 @@ return {
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
+		-- import mason_lspconfig plugin
+		local mason_lspconfig = require("mason-lspconfig")
+
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -70,64 +73,45 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure tailwindcss server
-		lspconfig["tailwindcss"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure emmet language server
-		lspconfig["emmet_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
-
-		lspconfig["eslint"].setup({
-			settings = {
-				packageManager = "npm",
-			},
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = { -- custom settings for lua
-				Lua = {
-					-- make the language server recognize "vim" global
-					diagnostics = {
-						globals = { "vim" },
+		mason_lspconfig.setup_handlers({
+			function(server_name)
+				lspconfig[server_name].setup({
+					capabilities = capabilities,
+				})
+			end,
+			["emmet_ls"] = function()
+				-- configure emmet language server
+				lspconfig["emmet_ls"].setup({
+					capabilities = capabilities,
+					filetypes = {
+						"html",
+						"typescriptreact",
+						"javascriptreact",
+						"css",
+						"sass",
+						"scss",
+						"less",
+						"svelte",
 					},
-					workspace = {
-						-- make language server aware of runtime files
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
+				})
+			end,
+			["lua_ls"] = function()
+				-- configure lua server (with special settings)
+				lspconfig["lua_ls"].setup({
+					capabilities = capabilities,
+					settings = {
+						Lua = {
+							-- make the language server recognize "vim" global
+							diagnostics = {
+								globals = { "vim" },
+							},
+							completion = {
+								callSnippet = "Replace",
+							},
 						},
 					},
-				},
-			},
+				})
+			end,
 		})
 	end,
 }

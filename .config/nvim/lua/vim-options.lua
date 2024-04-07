@@ -1,44 +1,72 @@
+local opt = vim.opt
+
+opt.relativenumber = true
+opt.number = true
+
+-- tabs & indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
+
+-- line wrapping
+opt.wrap = false
+
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
+opt.incsearch = true
+
+-- cursor line
+opt.cursorline = true
+
+-- appearance
+opt.termguicolors = true
+opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+
+-- backspace
+opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- clipboard
+opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+-- split windows
+opt.splitright = true -- split vertical window to the right
+opt.splitbelow = true -- split horizontal window to the bottom
+
+-- turn off swapfile
+opt.swapfile = false
 vim.g.mapleader = " "
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+-- enable mouse
+opt.mouse = "a"
 
-vim.cmd("set cursorline")
+-- keymaps
+local keymap = vim.keymap
 
-vim.opt.wrap = false
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.o.hlsearch = false
-vim.o.incsearch = true
+keymap.set("i", "jk", "<esc>")
+keymap.set("i", "kj", "<esc>")
 
-vim.wo.number = true
-vim.wo.rnu = true
-vim.o.mouse = "a"
-vim.o.clipboard = "unnamedplus"
-vim.o.breakindent = true
-vim.o.undofile = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.wo.signcolumn = "yes"
-vim.o.completeopt = "menuone,noselect"
-vim.o.termguicolors = true
+keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
+keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
+keymap.set("n", "<leader>q", ":bdelete<CR>")
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("i", "jk", "<esc>")
-vim.keymap.set("i", "kj", "<esc>")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
-vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
-vim.keymap.set("n", "<leader>q", ":bdelete<CR>")
-
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- window management
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
