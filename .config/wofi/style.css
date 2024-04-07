@@ -1,8 +1,8 @@
 window {
   margin: 0px;
-  background-color: rgba(25, 23, 36, 0.4);
+  background-color: rgba(25, 23, 36, 0.8);
   border-radius: 8px;
-  border: 2px solid #31748f;
+  border: 2px solid #c4a7e7;
   color: #e0def4;
   font-family: "SF Pro Display";
   font-size: 15px;
@@ -14,7 +14,7 @@ window {
   border: none;
   border-radius: 8px;
   color: #e0def4;
-  background-color: rgba(38, 35, 58, 0.6);
+  background-color: rgba(33, 32, 46, 0.6);
   padding: 8px;
 }
 
@@ -43,14 +43,14 @@ window {
 }
 
 #entry:selected {
-  background-color: rgba(156, 207, 216, 0.8);
-  color: #191724;
+  background-color: rgba(38, 35, 58, 0.8);
+  color: #e0def4;
   border-radius: 8px;
   outline: none;
 }
 
 #entry:selected * {
-  color: #191724;
+  color: #e0def4;
   border-radius: 8px;
   outline: none;
 }
