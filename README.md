@@ -3,7 +3,7 @@
 ## Fonts
 
 ```
-sudo pacman -S ttf-jetbrains-mono-nerd otf-san-francisco-mono
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-hack-nerd otf-san-francisco-mono
 ```
 
 ## Programs
@@ -24,11 +24,8 @@ sudo pacman -S hyprland hyprpaper wofi polkit-kde-agent cliphist
 
 ## Screenshots
 
-### Hyprland
-![Hyprland](https://i.imgur.com/F6ToCu1.png)
+![Desktop](https://i.imgur.com/TB2P7Qr.png)
 
-### Neovim
-![Neovim](https://i.imgur.com/mKzxXbO.png)
+![Hyprland](https://i.imgur.com/vYhvG4B.png)
 
-### wofi 
-![wofi](https://i.imgur.com/oD104iq.png)
+![wofi](https://i.imgur.com/jPXzc8a.png)
