@@ -9,6 +9,7 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.breakindent = true
 
 -- line wrapping
 opt.wrap = false
@@ -44,6 +45,13 @@ vim.g.mapleader = " "
 -- enable mouse
 opt.mouse = "a"
 
+opt.scrolloff = 10
+opt.showmode = false
+vim.g.have_nerd_font = true
+
+-- Decrease update time
+vim.opt.updatetime = 250
+
 -- keymaps
 local keymap = vim.keymap
 
@@ -53,9 +61,11 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("i", "jk", "<esc>")
 keymap.set("i", "kj", "<esc>")
 
+-- buffer management
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
 keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
 keymap.set("n", "<leader>q", ":bdelete<CR>")
+keymap.set("n", "<C-Tab>", "<C-^>")
 
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
