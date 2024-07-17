@@ -5,7 +5,7 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 40,
+  "height": 35,
   // "spacing": 4,
   "modules-left": ["clock", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
