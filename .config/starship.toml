@@ -3,8 +3,10 @@ add_newline = false
 palette = "catppuccin_mocha"
 
 [character]
-success_symbol = '[➜](bold green) '
-error_symbol = '[➜](bold red) '
+# success_symbol = '[➜](bold green) '
+# error_symbol = '[➜](bold red) '
+success_symbol = '[󰘧](bold green) '
+error_symbol = '[󰘧](bold red) '
 
 # [character]
 # # Note the use of Catppuccin color 'maroon'
