@@ -45,7 +45,7 @@ vim.g.mapleader = " "
 -- enable mouse
 opt.mouse = "a"
 
-opt.scrolloff = 10
+opt.scrolloff = 5
 opt.showmode = false
 vim.g.have_nerd_font = true
 
