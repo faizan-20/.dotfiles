@@ -66,6 +66,10 @@ return {
 			end,
 		})
 
+		local mason_registry = require("mason-registry")
+		local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+			.. "/node_modules/@vue/language-server"
+
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -101,12 +105,23 @@ return {
 					},
 				})
 			end,
-			-- ["volar"] = function()
-			-- 	lspconfig["volar"].setup({
-			-- 		capabilities = capabilities,
-			-- 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-			-- 	})
-			-- end,
+			["tsserver"] = function()
+				lspconfig["tsserver"].setup({
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = vue_language_server_path,
+								languages = { "vue" },
+							},
+						},
+					},
+					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+				})
+			end,
+			["volar"] = function()
+				lspconfig["volar"].setup({})
+			end,
 		})
 	end,
 }
