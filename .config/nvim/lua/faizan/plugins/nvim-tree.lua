@@ -11,8 +11,8 @@ return {
 		nvimtree.setup({
 			view = {
 				side = "left",
-				width = 35,
-				relativenumber = true,
+				width = 30,
+				relativenumber = false,
 			},
 			-- change folder arrow icons
 			renderer = {
@@ -43,7 +43,6 @@ return {
 			},
 			git = {
 				ignore = false,
-				nvim,
 			},
 		})
 

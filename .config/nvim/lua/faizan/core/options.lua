@@ -44,6 +44,8 @@ vim.g.mapleader = " "
 
 -- enable mouse
 opt.mouse = "a"
+-- Save undo history
+vim.opt.undofile = true
 
 opt.scrolloff = 5
 opt.showmode = false
