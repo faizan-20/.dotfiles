@@ -24,6 +24,7 @@ alias vi='nvim'
 alias sudo='sudo '
 alias ls='eza -l --group-directories-first --icons'
 alias orphan='sudo pacman -Qtdq |sudo pacman -Rns -'
+alias lg='lazygit'
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

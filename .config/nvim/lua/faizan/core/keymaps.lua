@@ -8,10 +8,10 @@ keymap.set("i", "jk", "<esc>")
 keymap.set("i", "kj", "<esc>")
 
 -- buffer management
-keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
-keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
+-- keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
+-- keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>")
+keymap.set("n", "<Tab>", "<C-^>")
 keymap.set("n", "<leader>q", ":bdelete<CR>")
-keymap.set("n", "<C-Tab>", "<C-^>")
 
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
