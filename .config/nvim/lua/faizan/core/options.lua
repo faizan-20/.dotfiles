@@ -45,11 +45,11 @@ vim.g.mapleader = " "
 -- enable mouse
 opt.mouse = "a"
 -- Save undo history
-vim.opt.undofile = true
+opt.undofile = true
 
 opt.scrolloff = 5
 opt.showmode = false
 vim.g.have_nerd_font = true
 
 -- Decrease update time
-vim.opt.updatetime = 250
+opt.updatetime = 250

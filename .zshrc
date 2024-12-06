@@ -1,24 +1,23 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="robbyrussell"
+zstyle ':omz:update' mode reminder
 
-# CASE_SENSITIVE="true"
-# HYPHEN_INSENSITIVE="true"
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-zstyle ':omz:plugins:nvm' lazy yes
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search nvm)
-
+# Plugins
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 source $ZSH/oh-my-zsh.sh
 
-export LANG=en_US.UTF-8
+# Locale
+# export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+
+# Editor
 export EDITOR='nvim'
 
-PATH=$HOME/.local/.bin/statusbar:$PATH
-PATH=$HOME/.local/.bin/executables:$PATH
+# PATH
+export PATH=$HOME/.local/bin:$HOME/.local/.bin/statusbar:$HOME/.local/.bin/executables:$PATH
 
-# Alias
+# Aliases
 alias pac='sudo pacman'
 alias vi='nvim'
 alias sudo='sudo '
@@ -26,6 +25,7 @@ alias ls='eza -l --group-directories-first --icons'
 alias orphan='sudo pacman -Qtdq |sudo pacman -Rns -'
 alias lg='lazygit'
 
+# Functions
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
@@ -35,8 +35,32 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+lazynvm() {
+  unset -f nvm node npm
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+}
+
+nvm() {
+  lazynvm 
+  nvm $@
+}
+ 
+node() {
+  lazynvm
+  node $@
+}
+ 
+npm() {
+  lazynvm
+  npm $@
+}
+
+npx() {
+  lazynvm
+  npx $@
+}
+
+# Starship and Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
