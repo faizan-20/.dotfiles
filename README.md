@@ -1,4 +1,5 @@
-# Env Files
+# Development Environment Files
+(.)dotfiles managed with GNU Stow
 
 ## Fonts
 
@@ -9,7 +10,7 @@ sudo pacman -S ttf-jetbrains-mono-nerd ttf-hack-nerd otf-san-francisco-mono
 ## Programs
 
 ```
-sudo pacman -S alacritty dunst waybar wofi tmux nvim starship
+sudo pacman -S kitty dunst waybar wofi tmux neovim starship
 ```
 
 ## Hyprland
