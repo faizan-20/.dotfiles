@@ -2,17 +2,28 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-	---@type snacks.Config
 	opts = {
+		input = {},
+		animate = {
+			duration = 20, -- ms per step
+			easing = "linear",
+			fps = 60, -- frames per second. Global setting for all animations
+		},
 		bigfile = { enabled = true },
-		dashboard = { enabled = true },
+		-- dashboard = {
+		-- 	sections = {
+		-- 		-- { section = "header" },
+		-- 		-- { section = "keys", gap = 1, padding = 1 },
+		-- 		{ section = "startup" },
+		-- 	},
+		-- },
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 		},
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
-		words = { enabled = true },
+		-- words = { enabled = true },
 		styles = {
 			notification = {
 				wo = { wrap = true }, -- Wrap notifications

@@ -6,6 +6,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("i", "jk", "<esc>")
 keymap.set("i", "kj", "<esc>")
+keymap.set("i", "jj", "<esc>")
+keymap.set("i", "kk", "<esc>")
 
 -- buffer management
 -- keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>")
