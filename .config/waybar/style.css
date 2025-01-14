@@ -4,8 +4,8 @@
   border: none;
   border-radius: 0;
   font-family: "Hack Nerd Font";
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -29,25 +29,25 @@ tooltip {
 }
 
 #workspaces button.active {
-  color: @iris;
+  color: @rose;
 }
 
 #workspaces button.focused {
   color: @subtle;
   background: @love;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #workspaces button.urgent {
   color: @base;
   background: @pine;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #workspaces button:hover {
   background: @highlightLow;
   color: @iris;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #custom-power_profile,
@@ -63,12 +63,18 @@ tooltip {
 #tray,
 #memory,
 #backlight {
-  background: @base;
-  opacity: 0.9;
+  background: @base-opacity;
+  opacity: 1;
   padding: 0px 10px;
   margin: 0px 0px;
-  margin-top: 5px;
-  border: 1px solid @pine;
+  margin-top: 1px;
+  border: 2px solid @highlightHigh;
+}
+
+#bluetooth {
+  /* color: @foam; */
+  border-left: 0px;
+  border-right: 0px;
 }
 
 #memory {
@@ -89,22 +95,16 @@ tooltip {
   color: @love;
 }
 
-#backlight {
-  color: @iris;
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 10px;
-}
-
 #tray {
-  border-radius: 10px;
+  border-radius: 8px;
   margin-left: 0px;
   margin-right: 20px;
 }
 
 #workspaces {
-  background: @base;
-  border-radius: 10px;
-  margin-left: 10px;
+  background: @base-opacity;
+  border-radius: 8px;
+  margin-left: 6px;
   padding-right: 0px;
   padding-left: 5px;
 }
@@ -116,9 +116,9 @@ tooltip {
 }
 
 #window {
-  border-radius: 10px;
-  margin-left: 60px;
-  margin-right: 60px;
+  border-radius: 8px;
+  margin-left: 10px;
+  /* margin-right: 60px; */
 }
 
 window#waybar.empty {
@@ -134,34 +134,45 @@ window#waybar.empty #window {
 }
 
 #clock {
-  color: @foam;
-  background: @highlightLow;
-  border-radius: 10px;
-  margin-left: 20px;
+  color: @rose;
+  background: @highlightLow-opacity;
+  border-radius: 8px;
+  /* margin-left: 20px; */
   border: none;
 }
 
 #network {
   color: @love;
-  border-radius: 10px 0px 0px 10px;
+  border-left: 0px;
   border-right: 0px;
-  margin-left: 10px;
 }
 
 #idle_inhibitor {
-  border-radius: 10px;
-  padding-right: 15px;
+  border-radius: 8px 0px 0px 8px;
+  border-right: 0px;
 }
 
 #pulseaudio {
   color: @iris;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 0px 0px 0px 0px;
   border-right: 0px;
+}
+
+#pulseaudio.microphone {
+  color: @text;
+  border-radius: 8px 0px 0px 8px;
+  border-right: 0px;
+}
+
+#backlight {
+  color: @foam;
+  border-radius: 0px 8px 8px 0px;
+  margin-right: 6px;
 }
 
 #battery {
   color: @foam;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 8px 8px 0;
   margin-right: 10px;
   border-left: 0px;
 }

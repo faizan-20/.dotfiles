@@ -4,6 +4,7 @@
 */
 
 @define-color base            #191724;
+@define-color base-opacity    rgba(25, 23, 36, 0.9);
 @define-color surface         #1f1d2e;
 @define-color overlay         #26233a;
 
@@ -19,5 +20,6 @@
 @define-color iris            #c4a7e7;
 
 @define-color highlightLow    #21202e;
+@define-color highlightLow-opacity rgba(33, 32, 46, 0.9);
 @define-color highlightMed    #403d52;
 @define-color highlightHigh   #524f67;

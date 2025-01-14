@@ -33,10 +33,10 @@ function notify_brightness {
 case $1 in
     up)
         brightnessctl s 5%+
-        notify_brightness
+        # notify_brightness
         ;;
     down)
         brightnessctl s 5%-
-        notify_brightness
+        # notify_brightness
         ;;
 esac

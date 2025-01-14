@@ -1,5 +1,24 @@
 return {
 	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		config = function()
+			require("kanagawa").setup({
+				transparent = true,
+				colors = {
+					theme = {
+						all = {
+							ui = {
+								bg_gutter = "none",
+							},
+						},
+					},
+				},
+			})
+			vim.cmd.colorscheme("kanagawa-dragon")
+		end,
+	},
+	{
 		"catppuccin/nvim",
 		lazy = false,
 		name = "catppuccin",
@@ -35,7 +54,7 @@ return {
 				},
 			})
 
-			vim.cmd("colorscheme rose-pine")
+			-- vim.cmd.colorscheme("rose-pine")
 		end,
 	},
 	{

@@ -49,14 +49,14 @@ function notify_mute {
 case $1 in
     up)
         wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+
-        notify_volume
+        # notify_volume
         ;;
     down)
         wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-
-        notify_volume
+        # notify_volume
         ;;
     mute)
         wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-        notify_mute
+        # notify_mute
         ;;
 esac

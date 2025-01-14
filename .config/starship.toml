@@ -1,12 +1,14 @@
 add_newline = false
 # Sets user-defined palette
-palette = "catppuccin_mocha"
+palette = "kanagawa_dragon"
 
 [character]
 # success_symbol = '[➜](bold green) '
 # error_symbol = '[➜](bold red) '
-success_symbol = '[󰘧](bold green) '
-error_symbol = '[󰘧](bold red) '
+success_symbol = '[󰘧](bamboo_green) '
+error_symbol = '[󰘧](dragon_red) '
+# success_symbol = '[󰿈](bold green) '
+# error_symbol = '[󰿈](bold red) '
 
 # [character]
 # # Note the use of Catppuccin color 'maroon'
@@ -19,6 +21,27 @@ truncation_length = 4
 # Catppuccin 'lavender'
 style = "bold lavender"
 
+[palettes.kanagawa_dragon]
+lotus_petal = "#f7d8e4"    # A soft rose tone inspired by lotus petals
+sakura = "#f4b9b7"         # A warm pink akin to cherry blossoms
+dragon_red = "#e46876"     # Vibrant red for the dragon's fiery energy
+blossom_pink = "#d993c6"   # Soft mauve for serene beauty
+ocean_blue = "#7397e1"     # A tranquil ocean blue
+tide_teal = "#6fb7c5"      # A delicate teal from the rolling tides
+sunset_peach = "#e8a780"   # A peachy hue for warm sunsets
+moon_yellow = "#e6d189"    # A muted yellow inspired by moonlight
+bamboo_green = "#98c379"   # A natural green for bamboo leaves
+forest_sky = "#8bbccc"     # A calming sky blue
+koi_gold = "#ecbb81"       # Gold accents inspired by koi fish
+shoji_white = "#dad9d6"    # A soft white from shoji paper
+inkstone_black = "#282828" # Deep black for traditional ink
+washi_gray = "#656b79"     # Muted gray from handmade washi paper
+rock_surface = "#4b4e55"   # A stony surface texture
+shadow_surface = "#3a3c45" # Subtle shadow gray
+crane_lavender = "#b3b6cf" # Pale lavender of distant mountains
+pinewood = "#1f262d"       # Deep green-brown for pinewood trees
+samurai_mantle = "#181b20" # A dark mantle reminiscent of samurai armor
+dragon_crust = "#121417"   # The deep crust of an ancient dragon's scales
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
