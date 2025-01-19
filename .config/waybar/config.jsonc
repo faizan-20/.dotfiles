@@ -5,7 +5,7 @@
   "exclusive": true,
   // "passthrough": true,
   "gtk-layer-shell": true,
-  "height": 30,
+  "height": 25,
   // "spacing": 4,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
@@ -17,10 +17,10 @@
     "bluetooth",
     "temperature",
     "memory",
-    "battery",
     "pulseaudio#microphone",
     "pulseaudio",
     "backlight",
+    "battery",
     "tray",
   ],
 
@@ -115,7 +115,7 @@
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
-    "format-source-muted": "  Muted",
+    "format-source-muted": "  ミュート",
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
@@ -151,8 +151,8 @@
 
   "bluetooth": {
     "format": " {status}",
-    "format-disabled": "", // an empty format will hide the module
-    "format-connected": " {num_connections}",
+    "format-disabled": "󰂲 {status}", // an empty format will hide the module
+    "format-connected": "󰂱 {status}",
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": " {device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",

@@ -66,9 +66,11 @@ return {
 			end,
 		})
 
-		local mason_registry = require("mason-registry")
-		local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-			.. "/node_modules/@vue/language-server"
+		-- YOU CAN DELETE THIS --
+		-- local mason_registry = require("mason-registry")
+		-- local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+		-- 	.. "/node_modules/@vue/language-server"
+		-- YOU CAN DELETE THIS --
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -107,21 +109,25 @@ return {
 			end,
 			["ts_ls"] = function()
 				lspconfig["ts_ls"].setup({
-					init_options = {
-						plugins = {
-							{
-								name = "@vue/typescript-plugin",
-								location = vue_language_server_path,
-								languages = { "vue" },
-							},
-						},
-					},
-					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+					-- YOU CAN DELETE THIS --
+					-- init_options = {
+					-- 	plugins = {
+					-- 		{
+					-- 			name = "@vue/typescript-plugin",
+					-- 			location = vue_language_server_path,
+					-- 			languages = { "vue" },
+					-- 		},
+					-- 	},
+					-- },
+					-- YOU CAN DELETE THIS --
+					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
 				})
 			end,
-			["volar"] = function()
-				lspconfig["volar"].setup({})
-			end,
+			-- YOU CAN DELETE THIS --
+			-- ["volar"] = function()
+			-- 	lspconfig["volar"].setup({})
+			--    end,
+			-- YOU CAN DELETE THIS --
 		})
 	end,
 }

@@ -17,6 +17,7 @@
 @define-color rose            #ebbcba;
 @define-color pine            #31748f;
 @define-color foam            #9ccfd8;
+@define-color foam-opacity    rgba(156, 207, 216, 0.6);
 @define-color iris            #c4a7e7;
 
 @define-color highlightLow    #21202e;

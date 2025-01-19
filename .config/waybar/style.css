@@ -10,44 +10,49 @@
 }
 
 window#waybar {
-  background: rgba(21, 18, 27, 0);
+  background: rgba(0, 0, 0, 0.6);
   color: @text;
+  /* border-bottom: 1px solid white; */
+  /* border-radius: 0px 0px 8px 8px; */
 }
 
 tooltip {
-  background: @base;
-  border-radius: 4px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: @pine;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid @highlightLow;
+  border-radius: 8px;
+  padding: 10px;
+  color: @text;
 }
 
 #workspaces button {
-  padding: 5px;
-  color: @muted;
-  margin-right: 5px;
+  padding: 0px 8px;
+  color: @highlightHigh;
+  margin: 2px 2px;
+  border-radius: 4px;
 }
 
 #workspaces button.active {
-  color: @rose;
+  color: @base;
+  background-color: @foam-opacity;
+  border-radius: 4px;
 }
 
 #workspaces button.focused {
   color: @subtle;
-  background: @love;
-  border-radius: 8px;
+  /* background: @love; */
+  border-radius: 4px;
 }
 
 #workspaces button.urgent {
   color: @base;
-  background: @pine;
-  border-radius: 8px;
+  /* background: @pine; */
+  border-radius: 4px;
 }
 
 #workspaces button:hover {
-  background: @highlightLow;
   color: @iris;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1); /* Slight hover highlight */
+  border-radius: 4px;
 }
 
 #custom-power_profile,
@@ -63,116 +68,74 @@ tooltip {
 #tray,
 #memory,
 #backlight {
-  background: @base-opacity;
   opacity: 1;
   padding: 0px 10px;
-  margin: 0px 0px;
-  margin-top: 1px;
-  border: 2px solid @highlightHigh;
 }
 
 #bluetooth {
-  /* color: @foam; */
-  border-left: 0px;
-  border-right: 0px;
+  color: @text;
 }
 
 #memory {
   color: @pine;
-  border-left: 0px;
-  border-right: 0px;
 }
 
 #temperature {
-  color: @iris;
-  border-left: 0px;
-  border-right: 0px;
+  color: @text;
 }
 
 #temperature.critical {
-  border-left: 0px;
-  border-right: 0px;
   color: @love;
 }
 
 #tray {
-  border-radius: 8px;
-  margin-left: 0px;
-  margin-right: 20px;
 }
 
 #workspaces {
-  background: @base-opacity;
-  border-radius: 8px;
-  margin-left: 6px;
-  padding-right: 0px;
-  padding-left: 5px;
+  /* background: @base-opacity; */
 }
 
 #custom-power_profile {
   color: @foam;
-  border-left: 0px;
-  border-right: 0px;
 }
 
 #window {
-  border-radius: 8px;
-  margin-left: 10px;
-  /* margin-right: 60px; */
+  color: @text;
 }
 
 window#waybar.empty {
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 window#waybar.empty #window {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-  /*  background-color: rgba(66,66,66,0.5); */ /* transparent */
   background-color: transparent;
 }
 
 #clock {
   color: @rose;
-  background: @highlightLow-opacity;
-  border-radius: 8px;
-  /* margin-left: 20px; */
-  border: none;
 }
 
 #network {
   color: @love;
-  border-left: 0px;
-  border-right: 0px;
 }
 
 #idle_inhibitor {
-  border-radius: 8px 0px 0px 8px;
-  border-right: 0px;
 }
 
 #pulseaudio {
   color: @iris;
-  border-radius: 0px 0px 0px 0px;
-  border-right: 0px;
 }
 
 #pulseaudio.microphone {
   color: @text;
-  border-radius: 8px 0px 0px 8px;
-  border-right: 0px;
 }
 
 #backlight {
-  color: @foam;
-  border-radius: 0px 8px 8px 0px;
-  margin-right: 6px;
+  color: @rose;
+  padding: 0px;
+  margin: 0px
 }
 
 #battery {
   color: @foam;
-  border-radius: 0 8px 8px 0;
-  margin-right: 10px;
-  border-left: 0px;
 }
