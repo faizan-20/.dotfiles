@@ -14,18 +14,8 @@ return {
 	},
 	opts = {
 		options = {
-      -- stylua: ignore
-      close_command = "bdelete",
-      -- stylua: ignore
-      right_mouse_command = "bdelete",
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = false,
-			-- diagnostics_indicator = function(_, _, diag)
-			-- 	local icons = require("lazyvim.config").icons.diagnostics
-			-- 	local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-			-- 		.. (diag.warning and icons.Warn .. diag.warning or "")
-			-- 	return vim.trim(ret)
-			-- end,
 			diagnostics_indicator = function(count, level, diagnostics_dict, context)
 				local icon = level:match("error") and " " or " "
 				return " " .. icon .. count

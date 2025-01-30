@@ -4,7 +4,7 @@ ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode reminder
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(nvm git zsh-autosuggestions zsh-syntax-highlighting web-search)
 source $ZSH/oh-my-zsh.sh
 
 # Locale
@@ -35,53 +35,30 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-# lazynvm() {
-#   unset -f nvm node npm
-#   export NVM_DIR=~/.nvm
-#   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# typeset -ga __lazyLoadLabels=(nvm node npm npx pnpm yarn pnpx bun bunx)
+#
+# __load-nvm() {
+#     export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+#
+#     [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+#     [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 # }
 #
-# nvm() {
-#   lazynvm 
-#   nvm $@
-# }
-#  
-# node() {
-#   lazynvm
-#   node $@
-# }
-#  
-# npm() {
-#   lazynvm
-#   npm $@
+# __work() {
+#     for label in "${__lazyLoadLabels[@]}"; do
+#         unset -f $label
+#     done
+#     unset -v __lazyLoadLabels
+#
+#     __load-nvm
+#     unset -f __load-nvm __work
 # }
 #
-# npx() {
-#   lazynvm
-#   npx $@
-# }
-typeset -ga __lazyLoadLabels=(nvm node npm npx pnpm yarn pnpx bun bunx)
+# for label in "${__lazyLoadLabels[@]}"; do
+#     eval "$label() { __work; $label \$@; }"
+# done
 
-__load-nvm() {
-    export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
-
-    [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-}
-
-__work() {
-    for label in "${__lazyLoadLabels[@]}"; do
-        unset -f $label
-    done
-    unset -v __lazyLoadLabels
-
-    __load-nvm
-    unset -f __load-nvm __work
-}
-
-for label in "${__lazyLoadLabels[@]}"; do
-    eval "$label() { __work; $label \$@; }"
-done
+#source /usr/share/nvm/init-nvm.sh
 
 # Starship and Zoxide
 eval "$(zoxide init --cmd cd zsh)"

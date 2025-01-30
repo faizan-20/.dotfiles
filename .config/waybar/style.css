@@ -25,7 +25,7 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 0px 8px;
+  padding: 0px 4px;
   color: @highlightHigh;
   margin: 2px 2px;
   border-radius: 4px;
@@ -33,7 +33,7 @@ tooltip {
 
 #workspaces button.active {
   color: @base;
-  background-color: @foam-opacity;
+  background-color: @foam;
   border-radius: 4px;
 }
 
@@ -91,20 +91,12 @@ tooltip {
 #tray {
 }
 
-#workspaces {
-  /* background: @base-opacity; */
-}
-
 #custom-power_profile {
   color: @foam;
 }
 
 #window {
   color: @text;
-}
-
-window#waybar.empty {
-  /* background-color: transparent; */
 }
 
 window#waybar.empty #window {
@@ -133,7 +125,7 @@ window#waybar.empty #window {
 #backlight {
   color: @rose;
   padding: 0px;
-  margin: 0px
+  margin: 0px;
 }
 
 #battery {

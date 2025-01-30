@@ -33,7 +33,7 @@ return {
 					}
 				end,
 			})
-			vim.cmd.colorscheme("kanagawa-dragon")
+			-- vim.cmd.colorscheme("kanagawa-dragon")
 		end,
 	},
 	{
@@ -72,7 +72,7 @@ return {
 				},
 			})
 
-			-- vim.cmd.colorscheme("rose-pine")
+			vim.cmd.colorscheme("rose-pine")
 		end,
 	},
 	{

@@ -1,6 +1,7 @@
-theme = Kanagawa Dragon
+theme = rose-pine
 mouse-hide-while-typing = true
 background-opacity = 0.8
+background = "#000000"
 window-decoration = false
 mouse-scroll-multiplier = 0.5
 shell-integration-features = no-cursor
