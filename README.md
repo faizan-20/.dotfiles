@@ -10,7 +10,7 @@ sudo pacman -S ttf-jetbrains-mono-nerd ttf-hack-nerd otf-san-francisco-mono
 ## Programs
 
 ```
-sudo pacman -S kitty dunst waybar wofi tmux neovim starship
+sudo pacman -S kitty ghostty swaync waybar wofi tmux neovim starship
 ```
 
 ## Hyprland
@@ -20,13 +20,13 @@ get the dependencies
 ```
 sudo pacman -S hyprland hyprpaper wofi polkit-kde-agent cliphist
                 xdg-desktop-portal-hyprland qt5-wayland qt6-wayland
-                pipewire wireplumber swayidle swaylock
+                pipewire wireplumber hypridel hyprlock
 ```
 
 ## Screenshots
 
-![Desktop](https://i.imgur.com/TB2P7Qr.png)
+![Desktop](https://i.imgur.com/4fhYUju.png)
 
-![Hyprland](https://i.imgur.com/vYhvG4B.png)
+![Hyprland](https://i.imgur.com/PcGcmRe.png)
 
-![wofi](https://i.imgur.com/jPXzc8a.png)
+![rofi](https://i.imgur.com/Dygvcl5.png)
