@@ -35,6 +35,9 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm, without auto-using the default version
+
 # typeset -ga __lazyLoadLabels=(nvm node npm npx pnpm yarn pnpx bun bunx)
 #
 # __load-nvm() {
@@ -57,8 +60,6 @@ function yy() {
 # for label in "${__lazyLoadLabels[@]}"; do
 #     eval "$label() { __work; $label \$@; }"
 # done
-
-#source /usr/share/nvm/init-nvm.sh
 
 # Starship and Zoxide
 eval "$(zoxide init --cmd cd zsh)"
