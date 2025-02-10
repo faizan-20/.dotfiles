@@ -1,4 +1,7 @@
 theme = rose-pine
+# theme = GruvboxDarkHard
+# font-family = IosevkaTerm Nerd Font
+# font-size = 12
 mouse-hide-while-typing = true
 background-opacity = 0.8
 background = "#000000"

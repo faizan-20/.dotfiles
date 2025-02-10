@@ -159,13 +159,6 @@ return {
 			desc = "Autocmds",
 		},
 		{
-			"<leader>sc",
-			function()
-				Snacks.picker.command_history()
-			end,
-			desc = "Command History",
-		},
-		{
 			"<leader>sC",
 			function()
 				Snacks.picker.commands()

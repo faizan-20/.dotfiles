@@ -11,7 +11,7 @@ return {
 			-- typescriptreact = { "eslint" },
 			-- vue = { "eslint" },
 			-- svelte = { "eslint" },
-			python = { "pylint" },
+			-- python = { "pylint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
