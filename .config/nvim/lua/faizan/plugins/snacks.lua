@@ -11,11 +11,7 @@ return {
 			},
 		},
 		input = {},
-		animate = {
-			duration = 20, -- ms per step
-			easing = "linear",
-			fps = 60, -- frames per second. Global setting for all animations
-		},
+		animate = {},
 		bigfile = { enabled = true },
 		-- dashboard = {
 		-- 	sections = {
@@ -30,7 +26,8 @@ return {
 		},
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
-		-- words = { enabled = true },
+		words = { enabled = true },
+		-- scroll = {},
 		indent = {},
 		scope = {},
 		styles = {
