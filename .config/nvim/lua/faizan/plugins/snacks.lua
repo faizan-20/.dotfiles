@@ -11,7 +11,6 @@ return {
 			},
 		},
 		input = {},
-		animate = {},
 		bigfile = { enabled = true },
 		-- dashboard = {
 		-- 	sections = {
@@ -27,7 +26,6 @@ return {
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
-		-- scroll = {},
 		indent = {},
 		scope = {},
 		styles = {
