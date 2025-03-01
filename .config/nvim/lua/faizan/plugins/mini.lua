@@ -13,5 +13,6 @@ return { -- Collection of various small independent plugins/modules
 		-- require("mini.animate").setup()
 		-- require("mini.comment").setup()
 		require("mini.pairs").setup()
+		require("mini.statusline").setup()
 	end,
 }
