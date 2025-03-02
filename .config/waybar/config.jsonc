@@ -10,7 +10,7 @@
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
   "modules-right": [
-    "media",
+    "custom/media",
     // "privacy",
     "idle_inhibitor",
     "network",
@@ -21,6 +21,7 @@
     "pulseaudio",
     // "backlight",
     "battery",
+    "custom/powermenu",
     "tray",
   ],
 
@@ -159,6 +160,13 @@
     "on-click": "blueberry",
   },
 
+  // CUSTOM MODULES
+  "custom/powermenu": {
+    "format": "⏻ ",
+    "escape": true,
+    "on-click": "nwg-bar",
+    // "on-click-right": "playerctl stop",
+  },
   "custom/media": {
     "format": "{icon} {}",
     "escape": true,
