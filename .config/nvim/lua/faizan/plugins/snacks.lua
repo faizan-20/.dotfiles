@@ -25,7 +25,7 @@ return {
 		},
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
-		words = { enabled = true },
+		-- words = { enabled = true },
 		indent = {},
 		scope = {},
 		styles = {
@@ -35,6 +35,20 @@ return {
 		},
 	},
 	keys = {
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "Toggle Zen Mode",
+		},
+		{
+			"<leader>Z",
+			function()
+				Snacks.zen.zoom()
+			end,
+			desc = "Toggle Zoom",
+		},
 		-- Picker
 		{
 			"<leader><leader>",
