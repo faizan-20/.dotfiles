@@ -27,11 +27,11 @@ return {
 			-- 	async = true,
 			-- 	timeout_ms = 5000,
 			-- },
-			format_after_save = {
-				lsp_fallback = true,
-				-- async = true,
-				timeout_ms = 5000,
-			},
+			-- format_after_save = {
+			-- 	lsp_fallback = true,
+			-- 	-- async = true,
+			-- 	timeout_ms = 5000,
+			-- },
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
