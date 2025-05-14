@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   color: @text;
   /* border-bottom: 1px solid white; */
   /* border-radius: 0px 0px 8px 8px; */

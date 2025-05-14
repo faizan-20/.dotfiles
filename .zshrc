@@ -16,6 +16,7 @@ export EDITOR='nvim'
 
 # PATH
 export PATH=$HOME/.local/bin:$HOME/.local/.bin/statusbar:$HOME/.local/.bin/executables:$PATH
+export PATH=/usr/bin:$PATH
 
 # Aliases
 alias pac='sudo pacman'

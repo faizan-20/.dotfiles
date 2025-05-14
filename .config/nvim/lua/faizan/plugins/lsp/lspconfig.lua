@@ -83,51 +83,51 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		mason_lspconfig.setup_handlers({
-			-- default handler for installed servers
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-			["lua_ls"] = function()
-				-- configure lua server (with special settings)
-				lspconfig["lua_ls"].setup({
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							-- make the language server recognize "vim" global
-							diagnostics = {
-								globals = { "vim" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				})
-			end,
-			["ts_ls"] = function()
-				lspconfig["ts_ls"].setup({
-					-- YOU CAN DELETE THIS --
-					-- init_options = {
-					-- 	plugins = {
-					-- 		{
-					-- 			name = "@vue/typescript-plugin",
-					-- 			location = vue_language_server_path,
-					-- 			languages = { "vue" },
-					-- 		},
-					-- 	},
-					-- },
-					-- YOU CAN DELETE THIS --
-					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
-				})
-			end,
-			-- YOU CAN DELETE THIS --
-			-- ["volar"] = function()
-			-- 	lspconfig["volar"].setup({})
-			--    end,
-			-- YOU CAN DELETE THIS --
-		})
+		-- mason_lspconfig.setup_handlers({
+		-- 	-- default handler for installed servers
+		-- 	function(server_name)
+		-- 		lspconfig[server_name].setup({
+		-- 			capabilities = capabilities,
+		-- 		})
+		-- 	end,
+		-- 	["lua_ls"] = function()
+		-- 		-- configure lua server (with special settings)
+		-- 		lspconfig["lua_ls"].setup({
+		-- 			capabilities = capabilities,
+		-- 			settings = {
+		-- 				Lua = {
+		-- 					-- make the language server recognize "vim" global
+		-- 					diagnostics = {
+		-- 						globals = { "vim" },
+		-- 					},
+		-- 					completion = {
+		-- 						callSnippet = "Replace",
+		-- 					},
+		-- 				},
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- 	["ts_ls"] = function()
+		-- 		lspconfig["ts_ls"].setup({
+		-- 			-- YOU CAN DELETE THIS --
+		-- 			-- init_options = {
+		-- 			-- 	plugins = {
+		-- 			-- 		{
+		-- 			-- 			name = "@vue/typescript-plugin",
+		-- 			-- 			location = vue_language_server_path,
+		-- 			-- 			languages = { "vue" },
+		-- 			-- 		},
+		-- 			-- 	},
+		-- 			-- },
+		-- 			-- YOU CAN DELETE THIS --
+		-- 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
+		-- 		})
+		-- 	end,
+		-- 	-- YOU CAN DELETE THIS --
+		-- 	-- ["volar"] = function()
+		-- 	-- 	lspconfig["volar"].setup({})
+		-- 	--    end,
+		-- 	-- YOU CAN DELETE THIS --
+		-- })
 	end,
 }
