@@ -3,6 +3,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
+		explorer = {},
 		picker = {
 			formatters = {
 				file = {
@@ -35,6 +36,13 @@ return {
 		},
 	},
 	keys = {
+		{
+			"<C-n>",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "Toggle Zen Mode",
+		},
 		{
 			"<leader>z",
 			function()
