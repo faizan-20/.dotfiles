@@ -1,36 +1,33 @@
 {
   "layer": "top",
   "position": "top",
-  "mod": "dock",
-  "exclusive": true,
-  // "passthrough": true,
-  "gtk-layer-shell": true,
-  "height": 25,
-  // "spacing": 4,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
+  // "height": "10",
+  "modules-left": ["hyprland/workspaces", "custom/kernel",],
+
+  "modules-center": ["clock", "custom/weather"],
+
   "modules-right": [
-    "custom/media",
-    // "privacy",
     "idle_inhibitor",
+    "pulseaudio",
+    // "custom/uptime",
+    // "backlight",
     "network",
     "bluetooth",
-    "temperature",
+    "cpu",
     "memory",
-    // "pulseaudio#microphone",
-    "pulseaudio",
-    // "backlight",
     "battery",
-    "custom/powermenu",
     "tray",
+    "custom/power"
   ],
 
-  "hyprland/window": {
-    "format": "{}",
-    "max-length": 40,
-    "separate-outputs": true,
-    "icon": true,
-    "icon-size": 18,
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "󰂲", // an empty format will hide the module
+    "format-connected": "󰂱",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueberry",
   },
 
   "idle_inhibitor": {
@@ -39,45 +36,6 @@
       "activated": "󰈈",
       "deactivated": "󰈉",
     },
-  },
-
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "on-click": "activate",
-    "format": "{icon}",
-    // "format-icons": {
-    //   "1": "いち",
-    //   "2": "に",
-    //   "3": "さん",
-    //   "4": "よん",
-    //   "5": "ご",
-    //   "6": "ろく",
-    //   "7": "なな",
-    //   "8": "はち",
-    //   "9": "きゅう",
-    //   "10": "じゅう",
-    // },
-  },
-
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10,
-  },
-
-  "clock": {
-    "format": "  {:%I:%M %p    %a, %b %e}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "interval": 60,
-  },
-
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}  {percent}",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "on-scroll-up": "brightnessctl set 5%+",
-    "on-scroll-down": "brightnessctl set 5%-",
-    "min-length": 6,
   },
 
   "battery": {
@@ -93,104 +51,102 @@
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󱈑"],
   },
 
-  "pulseaudio": {
-    "format": "{icon}  {volume}",
-    "tooltip": true,
-    "format-muted": " ミュート",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-click-right": "pavucontrol",
-    "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
-    "scroll-step": 5,
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
-    },
+      "active": "",
+      // "default": ""
+      "default": ""
+    }
   },
 
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "  ミュート",
-    "on-click": "pamixer --default-source -t",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5,
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
   },
 
-  "temperature": {
-    "thermal-zone": 1,
-    "format": "TEMP {temperatureC}°C",
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C ",
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  },
+
+  "clock": {
+    // "timezone": "America/Fortaleza",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a,%e %b - %I:%M %p}",
+    "interval": 60
+  },
+
+  "network": {
+    "format-wifi": "󰤢 {bandwidthDownBits}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-disconnected": "󰤠 No Network",
+    "format-linked": "{ifname} (No IP) ",
+    "interval": 5,
+    // "tooltip": false
+    "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
+    "on-click-right": "ghostty -e nmtui",
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
 
   "memory": {
     "interval": 30,
-    "format": "  {}%",
-    "max-length": 10,
-    "tooltip": true,
-    "tooltip-format": "Memory - {used:0.1f}GB used",
-    "on-click": "kitty -e btop",
+    "format": "  {used:0.1f}G/{total:0.1f}G"
   },
 
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "󰖪 ⚠",
-    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-    "on-click-right": "ghostty -e nmtui",
+  "custom/uptime": {
+    "format": "{}",
+    "interval": 1600,
+    "exec": "sh -c '(uptime -p)'"
   },
 
-  "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "󰂲", // an empty format will hide the module
-    "format-connected": "󰂱",
-    "tooltip-format": "{device_alias}",
-    "tooltip-format-connected": " {device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueberry",
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
   },
 
-  // CUSTOM MODULES
-  "custom/powermenu": {
-    "format": "⏻ ",
-    "escape": true,
+  "custom/power": {
+    "tooltip": false,
     "on-click": "nwg-bar",
-    // "on-click-right": "playerctl stop",
+    "format": "⏻"
   },
-  "custom/media": {
-    "format": "{icon} {}",
-    "escape": true,
+
+  "custom/docker": {
+    "format": "{}",
     "return-type": "json",
-    "max-length": 40,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+    "interval": 10,
+    "exec": "$(pwd)/scripts/docker-stats/docker-stats",
+    "tooltip": true
   },
-  "custom/spotify": {
-    "format": "{icon} {}",
-    "escape": true,
-    "return-type": "json",
-    "max-length": 40,
-    "interval": 30, // Remove this if your script is endless and write in loop
-    "on-click": "playerctl -p spotify play-pause",
-    "on-click-right": "killall spotify",
-    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up" : "playerctl -p spotify next",
-    "on-scroll-down" : "playerctl -p spotify previous",
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", 
-    "exec-if": "pgrep spotify"
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 1800,
+    "exec": "$(pwd)/scripts/weather-stats/weather-stats",
+    "return-type": "json"
+  },
+
+  "custom/kernel": {
+    "format": " {}",
+    "tooltip": true,
+    "interval": 0,
+    "exec": "uname -r",
+    "tooltip-format": "KERNEL: {}",
+    // "return-type": "json"
   }
 }

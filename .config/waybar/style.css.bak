@@ -1,0 +1,134 @@
+@import "./rose-pine.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Hack Nerd Font";
+  font-weight: 600;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.8);
+  color: @text;
+  /* border-bottom: 1px solid white; */
+  /* border-radius: 0px 0px 8px 8px; */
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid @highlightLow;
+  border-radius: 8px;
+  padding: 10px;
+  color: @text;
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  color: @highlightHigh;
+  margin: 2px 2px;
+  border-radius: 4px;
+}
+
+#workspaces button.active {
+  color: @base;
+  background-color: @foam;
+  border-radius: 4px;
+}
+
+#workspaces button.focused {
+  color: @subtle;
+  /* background: @love; */
+  border-radius: 4px;
+}
+
+#workspaces button.urgent {
+  color: @base;
+  /* background: @pine; */
+  border-radius: 4px;
+}
+
+#workspaces button:hover {
+  color: @iris;
+  background: rgba(255, 255, 255, 0.1); /* Slight hover highlight */
+  border-radius: 4px;
+}
+
+#custom-power_profile,
+#idle_inhibitor,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#temperature,
+#workspaces,
+#tray,
+#memory,
+#custom-powermenu,
+#backlight {
+  opacity: 1;
+  padding: 0px 10px;
+}
+
+#bluetooth {
+  color: @text;
+}
+
+#memory {
+  color: @pine;
+}
+
+#temperature {
+  color: @text;
+}
+
+#temperature.critical {
+  color: @love;
+}
+
+#tray {
+}
+
+#custom-power_profile {
+  color: @foam;
+}
+
+#window {
+  color: @text;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#clock {
+  color: @rose;
+}
+
+#network {
+  color: @love;
+}
+
+#idle_inhibitor {
+}
+
+#pulseaudio {
+  color: @iris;
+}
+
+#pulseaudio.microphone {
+  color: @text;
+}
+
+#backlight {
+  color: @rose;
+  padding: 0px;
+  margin: 0px;
+}
+
+#battery {
+  color: @foam;
+}
