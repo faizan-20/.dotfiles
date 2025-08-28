@@ -1,3 +1,5 @@
+@import "./rose-pine.css";
+
 * {
   font-family: CommitMono Nerd Font;
   font-size: 14px;
@@ -15,22 +17,35 @@
   /* margin: 2px 2px; */
 }
 
-#workspaces {
-  border-radius: 5px;
-  /* margin: 5px; */
-  /* background: #101010; */
-  margin-left: 2px;
-}
-
 #workspaces button {
-  color: #babbf1;
-  border-radius: 5px;
-  padding: 0.4rem;
+  padding: 2px 4px;
+  color: @highlightHigh;
+  margin: 2px 2px;
+  border-radius: 4px;
 }
 
 #workspaces button.active {
-  color: #99d1db;
-  border-radius: 5px;
+  color: @base;
+  background-color: @foam;
+  border-radius: 4px;
+}
+
+#workspaces button.focused {
+  color: @subtle;
+  /* background: @love; */
+  border-radius: 4px;
+}
+
+#workspaces button.urgent {
+  color: @base;
+  /* background: @pine; */
+  border-radius: 4px;
+}
+
+#workspaces button:hover {
+  color: @iris;
+  background: rgba(255, 255, 255, 0.1); /* Slight hover highlight */
+  border-radius: 4px;
 }
 
 button {

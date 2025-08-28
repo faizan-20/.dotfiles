@@ -51,14 +51,14 @@
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󱈑"],
   },
 
-  "hyprland/workspaces": {
-    "format": "{name}: {icon}",
-    "format-icons": {
-      "active": "",
-      // "default": ""
-      "default": ""
-    }
-  },
+  // "hyprland/workspaces": {
+  //   "format": "{name}: {icon}",
+  //   "format-icons": {
+  //     "active": "",
+  //     // "default": ""
+  //     "default": ""
+  //   }
+  // },
 
   "tray": {
     "icon-size": 16,
