@@ -1,26 +1,21 @@
-import = [
-  # uncomment the flavour you want below:
-  #"~/.config/alacritty/themes/catppuccin-mocha.toml"
-  "~/.config/alacritty/themes/rose-pine.toml"
-]
 
 [font]
 size = 14
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Regular"
 
 [scrolling]
@@ -36,3 +31,10 @@ opacity = 0.8
 [window.padding]
 x = 6
 y = 6
+
+[general]
+import = [
+  # uncomment the flavour you want below:
+  #"~/.config/alacritty/themes/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/rose-pine.toml"
+]
