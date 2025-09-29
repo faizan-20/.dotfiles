@@ -4,13 +4,13 @@
 ## Fonts
 
 ```
-sudo pacman -S ttf-jetbrains-mono-nerd ttf-hack-nerd otf-san-francisco-mono
+sudo pacman -S otf-commit-mono-nerd otf-san-francisco-mono ttf-jetbrains-mono-nerd
 ```
 
 ## Programs
 
 ```
-sudo pacman -S kitty ghostty swaync waybar wofi tmux neovim starship
+sudo pacman -S ghostty swaync waybar wofi tmux neovim starship
 ```
 
 ## Hyprland
@@ -18,9 +18,9 @@ sudo pacman -S kitty ghostty swaync waybar wofi tmux neovim starship
 get the dependencies
 
 ```
-sudo pacman -S hyprland hyprpaper wofi polkit-kde-agent cliphist
+sudo pacman -S hyprland hyprpaper rofi polkit-kde-agent cliphist
                 xdg-desktop-portal-hyprland qt5-wayland qt6-wayland
-                pipewire wireplumber hypridel hyprlock
+                pipewire wireplumber hypridel hyprlock qt5ct qt6ct xdg-desktop-portal-hyprland
 ```
 
 ## Screenshots
