@@ -18,9 +18,10 @@ sudo pacman -S ghostty swaync waybar wofi tmux neovim starship
 get the dependencies
 
 ```
-sudo pacman -S hyprland hyprpaper rofi polkit-kde-agent cliphist
-                xdg-desktop-portal-hyprland qt5-wayland qt6-wayland
-                pipewire wireplumber hypridel hyprlock qt5ct qt6ct xdg-desktop-portal-hyprland
+yay -S hyprland hyprpaper rofi polkit-kde-agent cliphist xdg-desktop-portal-hyprland
+        qt5-wayland qt6-wayland pipewire wireplumber hypridel hyprlock qt5ct qt6ct
+        xdg-desktop-portal-hyprland hyprshot rose-pine-hyprcursor nwg-look nwg-displays nwg-bar
+        swayosd
 ```
 
 ## Screenshots
