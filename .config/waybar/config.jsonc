@@ -1,7 +1,9 @@
 {
   "layer": "top",
   "position": "top",
-  // "height": "10",
+  "width": 1300,
+  "height": 32,
+  "margin-top": 2,
   "modules-left": ["hyprland/workspaces", "custom/kernel",],
 
   "modules-center": ["clock", "custom/weather"],
@@ -11,10 +13,10 @@
     "pulseaudio",
     // "custom/uptime",
     // "backlight",
-    "network",
+    // "network",
     "bluetooth",
-    "cpu",
-    "memory",
+    // "cpu",
+    // "memory",
     "battery",
     "tray",
     "custom/power"
@@ -77,9 +79,9 @@
 
   "clock": {
     // "timezone": "America/Fortaleza",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "format": "{:%a,%e %b - %I:%M %p}",
-    "interval": 60
+    "interval": 50
   },
 
   "network": {

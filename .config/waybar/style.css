@@ -1,55 +1,55 @@
-@import "./rose-pine.css";
-
 * {
-  font-family: CommitMono Nerd Font;
+  font-family: "CommitMono Nerd Font";
+  /* font-family: "Departure Mono"; */
   font-size: 14px;
   font-weight: 600;
+
   min-height: 0;
-  padding-right: 2px;
-  padding-left: 2px;
-  padding-bottom: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 #waybar {
-  /* background: transparent; */
   color: #c6d0f5;
-  background: rgba(0, 0, 0, 0.8);
-  /* margin: 2px 2px; */
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 120px;
+}
+
+#workspaces {
+  transition: all 200ms ease-in-out;
+  margin-left: 1rem;
 }
 
 #workspaces button {
-  padding: 2px 4px;
-  color: @highlightHigh;
-  margin: 2px 2px;
-  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  padding: 0px 10px;
+  margin: 4px 2px;
+  border-radius: 120px;
 }
 
 #workspaces button.active {
-  color: @base;
-  background-color: @foam;
-  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  color: #191724;
+  background-color: rgba(156, 207, 216, 1);
+  min-width: 30px;
 }
 
 #workspaces button.focused {
-  color: @subtle;
-  /* background: @love; */
-  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  /* color: #908caa; */
 }
 
 #workspaces button.urgent {
-  color: @base;
+  transition: all 200ms ease-in-out;
+  color: #eb6f92;
   /* background: @pine; */
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 
 #workspaces button:hover {
-  color: @iris;
-  background: rgba(255, 255, 255, 0.1); /* Slight hover highlight */
-  border-radius: 4px;
-}
-
-button {
-  background: transparent;
+  transition: all 200ms ease-in-out;
+  min-width: 30px;
+  color: #c4a7e7;
 }
 
 #workspaces button:hover {
@@ -81,19 +81,20 @@ button {
 
 #clock {
   color: #8caaee;
-  border-radius: 5px;
+  font-weight: 700;
+  /* border-radius: 5px; */
 }
 
 #custom-weather {
   color: #8caaee;
   margin-left: 0.5rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 #custom-kernel {
   color: #eb6f92;
   margin-left: 0.5rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 #battery {
@@ -114,21 +115,17 @@ button {
 
 #backlight,
 #battery {
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 
 #pulseaudio {
   color: #ea999c;
-  border-radius: 5px 0px 0px 5px;
-}
-
-#custom-docker {
-  color: #85c1dc;
+  /* border-radius: 5px 0px 0px 5px; */
 }
 
 #custom-music {
   color: #ca9ee6;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 #custom-lock {
@@ -137,19 +134,7 @@ button {
 
 #custom-power {
   margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
-}
-
-#custom-docker.docker {
-  color: #85c1dc;
-}
-
-#custom-docker.docker-none {
-  color: #737994;
-}
-
-#custom-docker.docker-error {
+  /* border-radius: 0px 5px 5px 0px; */
   color: #e78284;
 }
 
